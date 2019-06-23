@@ -133,6 +133,15 @@ pod install
 }
 ```
 
+```swift
+import SibcheStoreKit
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    SibcheStoreKit.initWithApiKey(YOUR_API_KEY, withScheme: YOUR_SCHEME)
+    return true
+}
+```
+
 لازم به ذکر است که به جای `YOUR_API_KEY` بایستی API Key گرفته شده از پنل دولوپری سیبچه را قرار دهید و به جای `YOUR_SCHEME` واژه scheme اضافه شده در مرحله قبل را جایگذاری نمایید.
 
 سپس امکان فراخوانی باز شدن url را نیز به پلاگین بدهید:
