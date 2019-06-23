@@ -24,7 +24,7 @@ sudo gem install cocoapods
 pod init
 ```
 
-سپس با استفاده از دستور روبر، فایل pod را بر روی پروژه ایجاد نمایید:
+سپس با استفاده از دستور روبرو، فایل pod را بر روی پروژه ایجاد نمایید:
 
 #### افزودن کیت توسعه‌دهندگان به cocoapods
 
@@ -206,11 +206,11 @@ pod install
 
 با استفاده از این دستور، میتوانید لیست بسته‌های فعال (خریداری شده) کاربر را بدست آورید. کافیست همانند دستور زیر، API پلاگین را فراخوانی نمایید.
 
-'''objc
+```objc
 [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, NSArray *purchasePackagesArray) {
 // Your block code for handling of packages list
 }];
-'''
+```
 
 در پاسخ پلاگین موفقیت/عدم موفقیت درخواست و نیز آرایه‌ای از بسته‌های خریداری شده فعال را برمیگرداند. توجه نمایید که این آرایه، آرایه‌ای از نوع `SibchePurchasePackage` است و شامل توابع زیر هست:
 
