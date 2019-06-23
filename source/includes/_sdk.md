@@ -29,7 +29,7 @@ pod init
 #### افزودن کیت توسعه‌دهندگان به cocoapods
 
 ```ruby
-pod 'SBStoreKit', '~> 1.0'
+pod 'SibcheStoreKit', '~> 1.0'
 ```
 
 کافی است دستور روبرو را بر روی فایل podfile خود اضافه نمایید:
@@ -45,7 +45,7 @@ target 'TestAppWithPods' do
   # use_frameworks!
 
   # Pods for TestAppWithPods
-  pod 'SBStoreKit', '~> 1.0'
+  pod 'SibcheStoreKit', '~> 1.0'
 end
 ```
 
@@ -58,15 +58,15 @@ pod install
 
 ### نصب دستی
 
-کیت توسعه‌دهندگان سیبچه را می‌توانید از [این‌جا](https://cdn.sibche.com/sibche-developer/SBStoreKit-beta-0.1.0.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SBStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
+کیت توسعه‌دهندگان سیبچه را می‌توانید از [این‌جا](https://cdn.sibche.com/sibche-developer/SibcheStoreKit-1.0.4.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
 
 > Picture
 
-سپس فایل پلاگین را انتخاب نموده و گزینه `add` را بزنید. سپس همانند شکل زیر، از بخش `General` از داخل تنظیمات پروژه، SBStoreKit.framework را از قسمت `Linked Frameworks and Libraries` حذف نمایید:
+سپس فایل پلاگین را انتخاب نموده و گزینه `add` را بزنید. سپس همانند شکل زیر، از بخش `General` از داخل تنظیمات پروژه، SibcheStoreKit.framework را از قسمت `Linked Frameworks and Libraries` حذف نمایید:
 
 > Picture
 
-سپس دکمه + از بخش `Embedded Binaries` را انتخاب نموده و `SBStoreKit.framework` را انتخاب نموده و دکمه `Add` را بزنید.
+سپس دکمه + از بخش `Embedded Binaries` را انتخاب نموده و `SibcheStoreKit.framework` را انتخاب نموده و دکمه `Add` را بزنید.
 
 ## تنظیمات اولیه
 
@@ -107,10 +107,10 @@ pod install
 
 ```objc
 #import "AppDelegate.h"
-#import <SBStoreKit/SBStoreKit.h>
+#import <SibcheStoreKit/SibcheStoreKit.h>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [SBStoreKit initWithApiKey:YOUR_API_KEY withScheme:YOUR_SCHEME];
+    [SibcheStoreKit initWithApiKey:YOUR_API_KEY withScheme:YOUR_SCHEME];
     return YES;
 }
 ```
@@ -121,7 +121,7 @@ pod install
 
 ```objc
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-    [SBStoreKit openUrl:url options:options];
+    [SibcheStoreKit openUrl:url options:options];
     return YES;
 }
 ```
@@ -131,20 +131,20 @@ pod install
 پس از تنظیم برنامه، میتوانید پکیجهای قابل خرید را مشاهده نمایید. کافیست همانند دستور زیر اقدام به فراخوانی API مورد نظر نمایید:
 
 ```objc
-[SBStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, NSArray *packagesArray) {
+[SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, NSArray *packagesArray) {
     // Your block code for handling of packages list
 }];
 ```
 
 سه نوع بسته قابل خرید داریم که عبارتند از:
 
-- `SBConsumablePackage`: بسته‌هایی که قابل مصرف هستند که خریداری شده و داخل بازی یا برنامه مصرف می‌شود. مانند بسته‌ی ۵۰۰ سکه طلا
-- `SBNonConsumablePackage`: بسته‌هایی که قابل مصرف نیستند و فقط یکبار خریداری می‌شوند. مانند بسته‌ی باز شدن قابلیت آپلود آواتار یا تغییر نام
-- `SBSubscriptionPackage`: بسته‌هایی هستند که به مدت محدود قابل استفاده بوده و پس از اتمام زمان آنها، کاربر مجاز به استفاده از آن قابلیت نیست. به عنوان مثال، قابلیت استفاده از امکانات ویژه به مدت یک سال
+- `SibcheConsumablePackage`: بسته‌هایی که قابل مصرف هستند که خریداری شده و داخل بازی یا برنامه مصرف می‌شود. مانند بسته‌ی ۵۰۰ سکه طلا
+- `SibcheNonConsumablePackage`: بسته‌هایی که قابل مصرف نیستند و فقط یکبار خریداری می‌شوند. مانند بسته‌ی باز شدن قابلیت آپلود آواتار یا تغییر نام
+- `SibcheSubscriptionPackage`: بسته‌هایی هستند که به مدت محدود قابل استفاده بوده و پس از اتمام زمان آنها، کاربر مجاز به استفاده از آن قابلیت نیست. به عنوان مثال، قابلیت استفاده از امکانات ویژه به مدت یک سال
 
 توجه نمایید که پارامتر اول، تابع مورد نظر برای فراخوانی، پس از آماده‌سازی بسته‌ها توسط پلاگین می‌باشد.
 
-در پاسخ، در صورت موفقیت، پلاگین بسته‌های قابل خرید را به عنوان پارامتر پاسخ به شما تحویل میدهد. این پارامتر آرایه‌ای از بسته‌های قابل خرید می‌باشد. این بسته‌ها از نوع `SBPackage` هستند. مدل `SBPackage` شامل سه نوع متفاوتی از بسته‌ها می‌باشد که در بالا اشاره شد. ساختار `SBPackage` شامل توابع زیر می‌باشد:
+در پاسخ، در صورت موفقیت، پلاگین بسته‌های قابل خرید را به عنوان پارامتر پاسخ به شما تحویل میدهد. این پارامتر آرایه‌ای از بسته‌های قابل خرید می‌باشد. این بسته‌ها از نوع `SibchePackage` هستند. مدل `SibchePackage` شامل سه نوع متفاوتی از بسته‌ها می‌باشد که در بالا اشاره شد. ساختار `SibchePackage` شامل توابع زیر می‌باشد:
 
 ```objc
 - (NSString*)packageId;
@@ -157,7 +157,7 @@ pod install
 - (NSNumber*)packageDiscount;
 ```
 
-بسته‌های `SBConsumablePackage` و `SBNonConsumablePackage` فقط همین توابع را دارند ولی بسته‌های `SBSubscriptionPackage` علاوه بر این توابع، داری توابع زیر نیز هست:
+بسته‌های `SibcheConsumablePackage` و `SibcheNonConsumablePackage` فقط همین توابع را دارند ولی بسته‌های `SibcheSubscriptionPackage` علاوه بر این توابع، داری توابع زیر نیز هست:
 
 ```objc
 - (NSString*)packageDuration;
@@ -169,19 +169,19 @@ pod install
 با در اختیار داشتن آیدی بسته مورد نظر می‌توانید اطلاعات آن بسته را در اختیار بگیرید. نحوه استفاده از این API به شکل زیر است:
 
 ```objc
-[SBStoreKit fetchInAppPurchasePackage:@"1" withPackagesCallback:^(BOOL isSuccessful, SBPackage *package) {
+[SibcheStoreKit fetchInAppPurchasePackage:@"1" withPackagesCallback:^(BOOL isSuccessful, SibchePackage *package) {
    // Your block code for handling of packages list
 }];
 ```
 
-پارامتر اول داده شده، همان callback ارسال شده ما است که پس از مشخص شدن وضعیت درخواست، فراخوانی خواهد شد. در صورت موفقیت، بسته‌ی مورد نظر در قالب آبجکت `SBPackage` (بسته به نوع بسته) به شما ارسال خواهد شد.
+پارامتر اول داده شده، همان callback ارسال شده ما است که پس از مشخص شدن وضعیت درخواست، فراخوانی خواهد شد. در صورت موفقیت، بسته‌ی مورد نظر در قالب آبجکت `SibchePackage` (بسته به نوع بسته) به شما ارسال خواهد شد.
 
 ## خرید بسته مشخص
 
 پس از گرفتن لیست پکیج‌ها، میتوانید درخواست خرید این بسته‌ها را از طریق API زیر به پلاگین بدهید. در ادامه ما در صورت نیاز کاربر را لاگین کرده و فرایند پرداخت را هندل میکنیم. سپس موفقیت یا ناموفق بودن خرید را به اطلاع شما میدهیم.
 
 ```objc
-[SBStoreKit purchasePackage:packageId withCallback:^(BOOL isSuccessful) {
+[SibcheStoreKit purchasePackage:packageId withCallback:^(BOOL isSuccessful) {
     // Your block code for handling of purchase callback
 }];
 ```
@@ -193,12 +193,12 @@ pod install
 با استفاده از این دستور، میتوانید لیست بسته‌های فعال (خریداری شده) کاربر را بدست آورید. کافیست همانند دستور زیر، API پلاگین را فراخوانی نمایید.
 
 '''objc
-[SBStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, NSArray *purchasePackagesArray) {
+[SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, NSArray *purchasePackagesArray) {
 // Your block code for handling of packages list
 }];
 '''
 
-در پاسخ پلاگین موفقیت/عدم موفقیت درخواست و نیز آرایه‌ای از بسته‌های خریداری شده فعال را برمیگرداند. توجه نمایید که این آرایه، آرایه‌ای از نوع `SBPurchasePackage` است و شامل توابع زیر هست:
+در پاسخ پلاگین موفقیت/عدم موفقیت درخواست و نیز آرایه‌ای از بسته‌های خریداری شده فعال را برمیگرداند. توجه نمایید که این آرایه، آرایه‌ای از نوع `SibchePurchasePackage` است و شامل توابع زیر هست:
 
 ```objc
 - (NSString*)purchasePackageId;
@@ -206,21 +206,21 @@ pod install
 - (NSString*)purchasePackageCode;
 - (NSDate*)purchasePackageExpireAt;
 - (NSDate*)purchasePackageCreatedAt;
-- (SBPackage*)package;
+- (SibchePackage*)package;
 ```
 
 توجه نمایید که منظور از وضعیت فعال بسته‌ها، برای هر نوع از بسته‌ها متفاوت است که به شرح زیر میباشد:
 
-- `SBConsumablePackage`: بسته‌هایی که خریداری شده‌اند ولی هنوز مصرف (Consume) نشده‌اند.
-- `SBNonConsumablePackage`: بسته‌هایی که خریداری شده‌اند.
-- `SBSubscriptionPackage`: بسته‌هایی که خریداری شده‌اند ولی هنوز از تاریخ انقضای آنها باقی مانده است.
+- `SibcheConsumablePackage`: بسته‌هایی که خریداری شده‌اند ولی هنوز مصرف (Consume) نشده‌اند.
+- `SibcheNonConsumablePackage`: بسته‌هایی که خریداری شده‌اند.
+- `SibcheSubscriptionPackage`: بسته‌هایی که خریداری شده‌اند ولی هنوز از تاریخ انقضای آنها باقی مانده است.
 
 ## مصرف کردن بسته‌های قابل مصرف (Consumable packages)
 
 برای مصرف کردن بسته‌های قابل مصرف (Consumable) بایستی شبیه دستور زیر، تابع مربوطه از پلاگین را فراخوانی کنیم:
 
 ```objc
-[SBStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful) {
+[SibcheStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful) {
    // Your block code for handling of package consume
 }];
 ```
