@@ -166,20 +166,20 @@ pod install
 
 ```objc
 - (NSString*)packageId;
-- (NSString*)packageType;
-- (NSString*)packageCode;
-- (NSString*)packageName;
+- (NSString*)type;
+- (NSString*)code;
+- (NSString*)name;
 - (NSString*)packageDescription;
-- (NSNumber*)packagePrice;
-- (NSNumber*)packageTotalPrice;
-- (NSNumber*)packageDiscount;
+- (NSNumber*)price;
+- (NSNumber*)totalPrice;
+- (NSNumber*)discount;
 ```
 
 بسته‌های `SibcheConsumablePackage` و `SibcheNonConsumablePackage` فقط همین توابع را دارند ولی بسته‌های `SibcheSubscriptionPackage` علاوه بر این توابع، داری توابع زیر نیز هست:
 
 ```objc
-- (NSString*)packageDuration;
-- (NSString*)packageGroup;
+- (NSString*)duration;
+- (NSString*)group;
 ```
 
 ## گرفتن اطلاعات بسته مشخص
@@ -220,10 +220,10 @@ pod install
 
 ```objc
 - (NSString*)purchasePackageId;
-- (NSString*)purchasePackageType;
-- (NSString*)purchasePackageCode;
-- (NSDate*)purchasePackageExpireAt;
-- (NSDate*)purchasePackageCreatedAt;
+- (NSString*)type;
+- (NSString*)code;
+- (NSDate*)expireAt;
+- (NSDate*)createdAt;
 - (SibchePackage*)package;
 ```
 
