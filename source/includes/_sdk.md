@@ -4,7 +4,7 @@
 
 1. بارگزاری اپلیکیشن در [پنل توسعه‌دهندگان سیبچه](https://sibche.com/developer)
 2. دریافت API Key عمومی برنامه از پنل توسعه‌دهندگان
-3. آخرین نسخه‌ی XCode
+3. آخرین نسخه‌ی Xcode
 
 ## نصب کیت توسعه‌دهندگان
 
@@ -58,23 +58,35 @@ pod install
 
 ### نصب دستی
 
-کیت توسعه‌دهندگان سیبچه را می‌توانید از [این‌جا](https://cdn.sibche.com/sibche-developer/SibcheStoreKit-1.0.4.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
+کیت توسعه‌دهندگان سیبچه را می‌توانید از [اینجا](https://cdn.sibche.com/sibche-developer/SibcheStoreKit-1.0.4.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
 
-> Picture
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg)
 
 سپس فایل پلاگین را انتخاب نموده و گزینه `add` را بزنید. سپس همانند شکل زیر، از بخش `General` از داخل تنظیمات پروژه، SibcheStoreKit.framework را از قسمت `Linked Frameworks and Libraries` حذف نمایید:
 
-> Picture
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc2.jpg)
 
-سپس دکمه + از بخش `Embedded Binaries` را انتخاب نموده و `SibcheStoreKit.framework` را انتخاب نموده و دکمه `Add` را بزنید.
+سپس دکمه + از بخش `Embedded Binaries` را انتخاب نموده و `SibcheStoreKit.framework` را انتخاب نموده و دکمه `Add` را بزنید. همانند عکسهای زیر:
+
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc3.jpg)
+
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc4.jpg)
+
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc5.jpg)
 
 ## تنظیمات اولیه
 
 ### افزودن scheme سیبچه به پروژه
 
-ابتدا بایستی scheme مربوط به اپ سیبچه را به لیست scheme های قابل چک خود اضافه نمایید. برای این کار، ابتدا برنامه را درون XCode باز کرده و فایل `info.plist` برنامه را باز کرده و همانند شکل تنظیمات مختص بررسی scheme سیبچه را به این لیست اضافه نمایید:
+ابتدا بایستی scheme مربوط به اپ سیبچه را به لیست scheme های قابل چک خود اضافه نمایید. برای این کار، ابتدا برنامه را درون Xcode باز کرده و فایل info.plist برنامه را باز کرده و همانند شکل تنظیمات مختص بررسی scheme سیبچه را به این لیست اضافه نمایید (ابتدا دکمه + را زده و اسم LSApplicationQueriesSchemes را وارد کرده و سپس نوع کلید را به Array تغییر داده و عبارت newsibche را به عنوان زیربخش این آرایه وارد کنید):
 
-> Picture
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc6.jpg)
+
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc7.jpg)
+
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc8.jpg)
+
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc9.jpg)
 
 یا نوشته زیر را به `info.plist` خود اضافه نمایید:
 
@@ -89,13 +101,15 @@ pod install
 
 > **اگر برنامه شما دارای scheme اختصاصی می‌باشد این مرحله را رد کنید.**
 
-برای اضافه کردن scheme اختصاصی بایستی طبق مراحل زیر تنظیمات برنامه را داخل xcode باز کرده و سپس به تب info مراجعه نمایید:
+برای اضافه کردن scheme اختصاصی بایستی طبق مراحل زیر تنظیمات برنامه را داخل Xcode باز کرده و سپس به تب info مراجعه نمایید:
 
-> Picture
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc10.jpg)
+
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc11.jpg)
 
 سپس همانند شکل، url اختصاصی اپلیکیشن را اضافه نمایید:
 
-> Picture
+![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc12.jpg)
 
 به جای test، نام این scheme که میتواند باندل آیدی برنامه و یا هر اسم دیگری باشد را وارد کرده و سپس به جای testapp بایستی scheme مورد نظرتان را وارد نمایید. به عنوان مثال scheme تنظیم شده **تلگرام** `tg` و scheme تنظیم شده برای برنامه **اینستاگرام** `instagram` میباشد. لیست کامل scheme برنامه‌های معروف را میتوانید از [اینجا](https://ios.gadgethacks.com/news/always-updated-list-ios-app-url-scheme-names-0184033/) مشاهده نمایید.
 
