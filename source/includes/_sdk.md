@@ -153,6 +153,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
+```swift
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    SibcheStoreKit.open(url, options: options)
+    return true
+}
+```
+
 ## گرفتن لیست پکیجهای قابل خرید
 
 پس از تنظیم برنامه، میتوانید پکیجهای قابل خرید را مشاهده نمایید. کافیست همانند دستور زیر اقدام به فراخوانی API مورد نظر نمایید:
@@ -161,6 +168,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 [SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, NSArray *packagesArray) {
     // Your block code for handling of packages list
 }];
+```
+
+```swift
+SibcheStoreKit.fetch { (isSuccessful, packagesArray) in
+    // Your block code for handling of packages list
+}
 ```
 
 سه نوع بسته قابل خرید داریم که عبارتند از:
@@ -184,6 +197,17 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 - (NSNumber*)discount;
 ```
 
+```swift
+var packageId: String
+var type: String
+var code: String
+var name: String
+var packageDescription: String
+var price: NSNumber
+var totalPrice: NSNumber
+var discount: NSNumber
+```
+
 بسته‌های `SibcheConsumablePackage` و `SibcheNonConsumablePackage` فقط همین توابع را دارند ولی بسته‌های `SibcheSubscriptionPackage` علاوه بر این توابع، داری توابع زیر نیز هست:
 
 ```objc
@@ -191,14 +215,25 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 - (NSString*)group;
 ```
 
+```swift
+var duration: String
+var group: String
+```
+
 ## گرفتن اطلاعات بسته مشخص
 
 با در اختیار داشتن آیدی بسته مورد نظر می‌توانید اطلاعات آن بسته را در اختیار بگیرید. نحوه استفاده از این API به شکل زیر است:
 
 ```objc
-[SibcheStoreKit fetchInAppPurchasePackage:@"1" withPackagesCallback:^(BOOL isSuccessful, SibchePackage *package) {
+[SibcheStoreKit fetchInAppPurchasePackage:@"com.example.testapp" withPackagesCallback:^(BOOL isSuccessful, SibchePackage *package) {
    // Your block code for handling of packages list
 }];
+```
+
+```swift
+SibcheStoreKit.fetch(inAppPurchasePackage: "com.example.testapp") { (isSuccessful, package) in
+    // Your block code for handling of packages list
+}
 ```
 
 پارامتر اول داده شده، همان callback ارسال شده ما است که پس از مشخص شدن وضعیت درخواست، فراخوانی خواهد شد. در صورت موفقیت، بسته‌ی مورد نظر در قالب آبجکت `SibchePackage` (بسته به نوع بسته) به شما ارسال خواهد شد.
@@ -213,6 +248,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }];
 ```
 
+```swift
+SibcheStoreKit.purchasePackage("com.example.testapp") { (isSuccessful) in
+  // Your block code for handling of purchase callback
+}
+```
+
 با استفاده از این دستور، پلاگین فرآیند لاگین و پرداخت را هندل کرده و در نهایت موفقیت و یا عدم موفقیت را به شما خبر خواهد داد.
 
 ## گرفتن لیست بسته های خریداری شده
@@ -221,8 +262,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ```objc
 [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, NSArray *purchasePackagesArray) {
-// Your block code for handling of packages list
+  // Your block code for handling of packages list
 }];
+```
+
+```swift
+SibcheStoreKit.fetchActive { (isSuccessful, purchasePackagesArray) in
+  // Your block code for handling of packages list
+}
 ```
 
 در پاسخ پلاگین موفقیت/عدم موفقیت درخواست و نیز آرایه‌ای از بسته‌های خریداری شده فعال را برمیگرداند. توجه نمایید که این آرایه، آرایه‌ای از نوع `SibchePurchasePackage` است و شامل توابع زیر هست:
@@ -234,6 +281,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 - (NSDate*)expireAt;
 - (NSDate*)createdAt;
 - (SibchePackage*)package;
+```
+
+```swift
+var purchasePackageId: String
+var type: String
+var code: String
+var expireAt: NSDate
+var createdAt: NSDate
+var package: SibchePackage
 ```
 
 توجه نمایید که منظور از وضعیت فعال بسته‌ها، برای هر نوع از بسته‌ها متفاوت است که به شرح زیر میباشد:
@@ -250,6 +306,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 [SibcheStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful) {
    // Your block code for handling of package consume
 }];
+```
+
+```swift
+SibcheStoreKit.consumePurchasePackage(purchasePackageData.purchasePackageId) { (isSuccessful) in
+  // Your block code for handling of package consume
+}
 ```
 
 در پاسخ پس از مشخص شدن وضعیت درخواست، پلاگین callback داده شده را فراخوانی خواهد کرد. در صورت موفقیت، یعنی بسته مورد نظر با موفقیت مصرف شده و در صورت عدم موفقیت، در مصرف بسته مورد نظر دچار مشکلی شده‌ایم.
