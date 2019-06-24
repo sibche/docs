@@ -123,7 +123,7 @@ pod install
 
 ابتدا کد اجرای پلاگین را داخل تابع didFinishLaunchingWithOptions اضافه نمایید:
 
-```objective_c
+```objc
 #import "AppDelegate.h"
 #import <SibcheStoreKit/SibcheStoreKit.h>
 
@@ -146,7 +146,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 سپس امکان فراخوانی باز شدن url را نیز به پلاگین بدهید:
 
-```objective_c
+```objc
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
     [SibcheStoreKit openUrl:url options:options];
     return YES;
@@ -157,7 +157,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 پس از تنظیم برنامه، میتوانید پکیجهای قابل خرید را مشاهده نمایید. کافیست همانند دستور زیر اقدام به فراخوانی API مورد نظر نمایید:
 
-```objective_c
+```objc
 [SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, NSArray *packagesArray) {
     // Your block code for handling of packages list
 }];
@@ -173,7 +173,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 در پاسخ، در صورت موفقیت، پلاگین بسته‌های قابل خرید را به عنوان پارامتر پاسخ به شما تحویل میدهد. این پارامتر آرایه‌ای از بسته‌های قابل خرید می‌باشد. این بسته‌ها از نوع `SibchePackage` هستند. مدل `SibchePackage` شامل سه نوع متفاوتی از بسته‌ها می‌باشد که در بالا اشاره شد. ساختار `SibchePackage` شامل توابع زیر می‌باشد:
 
-```objective_c
+```objc
 - (NSString*)packageId;
 - (NSString*)type;
 - (NSString*)code;
@@ -186,7 +186,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 بسته‌های `SibcheConsumablePackage` و `SibcheNonConsumablePackage` فقط همین توابع را دارند ولی بسته‌های `SibcheSubscriptionPackage` علاوه بر این توابع، داری توابع زیر نیز هست:
 
-```objective_c
+```objc
 - (NSString*)duration;
 - (NSString*)group;
 ```
@@ -195,7 +195,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 با در اختیار داشتن آیدی بسته مورد نظر می‌توانید اطلاعات آن بسته را در اختیار بگیرید. نحوه استفاده از این API به شکل زیر است:
 
-```objective_c
+```objc
 [SibcheStoreKit fetchInAppPurchasePackage:@"1" withPackagesCallback:^(BOOL isSuccessful, SibchePackage *package) {
    // Your block code for handling of packages list
 }];
@@ -207,7 +207,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 پس از گرفتن لیست پکیج‌ها، میتوانید درخواست خرید این بسته‌ها را از طریق API زیر به پلاگین بدهید. در ادامه ما در صورت نیاز کاربر را لاگین کرده و فرایند پرداخت را هندل میکنیم. سپس موفقیت یا ناموفق بودن خرید را به اطلاع شما میدهیم.
 
-```objective_c
+```objc
 [SibcheStoreKit purchasePackage:packageId withCallback:^(BOOL isSuccessful) {
     // Your block code for handling of purchase callback
 }];
@@ -219,7 +219,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 با استفاده از این دستور، میتوانید لیست بسته‌های فعال (خریداری شده) کاربر را بدست آورید. کافیست همانند دستور زیر، API پلاگین را فراخوانی نمایید.
 
-```objective_c
+```objc
 [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, NSArray *purchasePackagesArray) {
 // Your block code for handling of packages list
 }];
@@ -227,7 +227,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 در پاسخ پلاگین موفقیت/عدم موفقیت درخواست و نیز آرایه‌ای از بسته‌های خریداری شده فعال را برمیگرداند. توجه نمایید که این آرایه، آرایه‌ای از نوع `SibchePurchasePackage` است و شامل توابع زیر هست:
 
-```objective_c
+```objc
 - (NSString*)purchasePackageId;
 - (NSString*)type;
 - (NSString*)code;
@@ -246,7 +246,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 برای مصرف کردن بسته‌های قابل مصرف (Consumable) بایستی شبیه دستور زیر، تابع مربوطه از پلاگین را فراخوانی کنیم:
 
-```objective_c
+```objc
 [SibcheStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful) {
    // Your block code for handling of package consume
 }];
