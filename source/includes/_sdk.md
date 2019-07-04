@@ -29,7 +29,7 @@ pod init
 #### افزودن کیت توسعه‌دهندگان به cocoapods
 
 ```ruby
-pod 'SibcheStoreKit', '~> 1.0'
+pod 'SibcheStoreKit', '~> 2.0'
 ```
 
 کافی است دستور روبرو را بر روی فایل podfile خود اضافه نمایید:
@@ -45,7 +45,7 @@ target 'TestAppWithPods' do
   # use_frameworks!
 
   # Pods for TestAppWithPods
-  pod 'SibcheStoreKit', '~> 1.0'
+  pod 'SibcheStoreKit', '~> 2.0'
 end
 ```
 
@@ -58,7 +58,7 @@ pod install
 
 ### نصب دستی
 
-کیت توسعه‌دهندگان سیبچه را می‌توانید از [اینجا](https://cdn.sibche.com/sibche-developer/SibcheStoreKit-1.0.4.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
+کیت توسعه‌دهندگان سیبچه را می‌توانید از [اینجا](https://cdn.sibche.com/sibche-developer/SibcheStoreKit-2.0.3.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
 
 ![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg)
 
