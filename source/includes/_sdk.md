@@ -165,13 +165,13 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 پس از تنظیم برنامه، میتوانید پکیجهای قابل خرید را مشاهده نمایید. کافیست همانند دستور زیر اقدام به فراخوانی API مورد نظر نمایید:
 
 ```objective_c
-[SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, NSArray *packagesArray) {
+[SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, SibcheError* error, NSArray *packagesArray) {
     // Your block code for handling of packages list
 }];
 ```
 
 ```swift
-SibcheStoreKit.fetch { (isSuccessful, packagesArray) in
+SibcheStoreKit.fetch { (isSuccessful, error, packagesArray) in
     // Your block code for handling of packages list
 }
 ```
@@ -220,18 +220,39 @@ var duration: String
 var group: String
 ```
 
-## گرفتن اطلاعات بسته مشخص
-
-با در اختیار داشتن آیدی بسته مورد نظر می‌توانید اطلاعات آن بسته را در اختیار بگیرید. نحوه استفاده از این API به شکل زیر است:
+در صورت ناموفق بودن درخواست، پارمتری با نام error از نوع `‍‍SibcheError` ارسال میشود که این پارامتر شامل خصوصیات زیر است:
 
 ```objective_c
-[SibcheStoreKit fetchInAppPurchasePackage:@"com.example.testapp" withPackagesCallback:^(BOOL isSuccessful, SibchePackage *package) {
+@property NSNumber* errorCode;
+@property NSString* message;
+@property NSNumber* statusCode;
+```
+
+errorCode همان شماره خطایی هست که مطابق جدول زیر ایجاد شده است. message پیغام خطایی هست که از طرف سرور دریافت شده. statusCode همان شماره خطای http هست که سرور در جواب درخواست http ما داده است.
+
+| شماره errorCode | دلیل خطای مربوطه                         |
+| --------------- | ---------------------------------------- |
+| 1000            | خطای نامشخص                              |
+| 1001            | این بسته قبلا خریداری شده است            |
+| 1002            | از ادامه عملیات منصرف شد                 |
+| 1003            | در فرایند ورود (لاگین) دچار مشکل شده‌ایم |
+
+## گرفتن اطلاعات بسته مشخص
+
+با در اختیار داشتن آیدی یا کد باندل بسته مورد نظر می‌توانید اطلاعات آن بسته را در اختیار بگیرید. نحوه استفاده از این API به شکل زیر است:
+
+```objective_c
+// Both package bundle code & package id is acceptable
+
+[SibcheStoreKit fetchInAppPurchasePackage:@"com.example.testapp" withPackagesCallback:^(BOOL isSuccessful, SibcheError* error, SibchePackage *package) {
    // Your block code for handling of packages list
 }];
 ```
 
 ```swift
-SibcheStoreKit.fetch(inAppPurchasePackage: "com.example.testapp") { (isSuccessful, package) in
+// Both package bundle code & package id is acceptable
+
+SibcheStoreKit.fetch(inAppPurchasePackage: "com.example.testapp") { (isSuccessful, error, package) in
     // Your block code for handling of packages list
 }
 ```
@@ -243,13 +264,17 @@ SibcheStoreKit.fetch(inAppPurchasePackage: "com.example.testapp") { (isSuccessfu
 پس از گرفتن لیست پکیج‌ها، میتوانید درخواست خرید این بسته‌ها را از طریق API زیر به پلاگین بدهید. در ادامه ما در صورت نیاز کاربر را لاگین کرده و فرایند پرداخت را هندل میکنیم. سپس موفقیت یا ناموفق بودن خرید را به اطلاع شما میدهیم.
 
 ```objective_c
-[SibcheStoreKit purchasePackage:packageId withCallback:^(BOOL isSuccessful) {
+// Both package bundle code & package id is acceptable
+
+[SibcheStoreKit purchasePackage:@"com.example.testapp" withCallback:^(BOOL isSuccessful, SibcheError* error) {
     // Your block code for handling of purchase callback
 }];
 ```
 
 ```swift
-SibcheStoreKit.purchasePackage("com.example.testapp") { (isSuccessful) in
+// Both package bundle code & package id is acceptable
+
+SibcheStoreKit.purchasePackage("com.example.testapp") { (isSuccessful, error) in
   // Your block code for handling of purchase callback
 }
 ```
@@ -261,13 +286,13 @@ SibcheStoreKit.purchasePackage("com.example.testapp") { (isSuccessful) in
 با استفاده از این دستور، میتوانید لیست بسته‌های فعال (خریداری شده) کاربر را بدست آورید. کافیست همانند دستور زیر، API پلاگین را فراخوانی نمایید.
 
 ```objective_c
-[SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, NSArray *purchasePackagesArray) {
+[SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError* error, NSArray *purchasePackagesArray) {
   // Your block code for handling of packages list
 }];
 ```
 
 ```swift
-SibcheStoreKit.fetchActive { (isSuccessful, purchasePackagesArray) in
+SibcheStoreKit.fetchActive { (isSuccessful, error, purchasePackagesArray) in
   // Your block code for handling of packages list
 }
 ```
@@ -303,13 +328,13 @@ var package: SibchePackage
 برای مصرف کردن بسته‌های قابل مصرف (Consumable) بایستی شبیه دستور زیر، تابع مربوطه از پلاگین را فراخوانی کنیم:
 
 ```objective_c
-[SibcheStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful) {
+[SibcheStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful, SibcheError* error) {
    // Your block code for handling of package consume
 }];
 ```
 
 ```swift
-SibcheStoreKit.consumePurchasePackage(purchasePackageData.purchasePackageId) { (isSuccessful) in
+SibcheStoreKit.consumePurchasePackage(purchasePackageData.purchasePackageId) { (isSuccessful, error) in
   // Your block code for handling of package consume
 }
 ```
