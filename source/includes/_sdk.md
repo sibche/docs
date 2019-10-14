@@ -2,54 +2,21 @@
 
 ## نیازمندیهای نصب کیت توسعه دهندگان
 
-1. بارگزاری اپلیکیشن در [پنل توسعه‌دهندگان سیبچه](https://sibche.com/developer)
-2. دریافت API Key عمومی برنامه از پنل توسعه‌دهندگان
+1. بارگزاری برنامه در [پنل توسعه‌دهندگان سیبچه](https://sibche.com/developer)
+2. دریافت کلید برنامه از پنل توسعه‌دهندگان
 3. آخرین نسخه‌ی Xcode
 
 ## نصب کیت توسعه‌دهندگان
 
 ### نصب از طریق Cocoapods
 
-#### نصب cocoapods در سیستم
-
-```shell
-sudo gem install cocoapods
-```
-
-ابتدا بایستی از طریق دستور روبرو، cocoapods را نصب نمایید:
-
-#### راه‌اندازی cocoapods
-
-```shell
-pod init
-```
-
-سپس با استفاده از دستور روبرو، فایل pod را بر روی پروژه ایجاد نمایید:
-
-#### افزودن کیت توسعه‌دهندگان به cocoapods
-
-```ruby
-pod 'SibcheStoreKit', '~> 2.0'
-```
-
 کافی است دستور روبرو را بر روی فایل podfile خود اضافه نمایید:
 
-> فایل podfile در نهایت به این شکل خواهد شد:
-
 ```ruby
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-
-target 'TestAppWithPods' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for TestAppWithPods
-  pod 'SibcheStoreKit', '~> 2.0'
-end
+pod 'SibcheStoreKit', '~> 3.0'
 ```
 
-> سپس پادهای اضافه‌شده را نصب کنید
+> سپس پاد اضافه‌شده را نصب نمایید
 
 ```shell
 pod repo update
@@ -58,44 +25,33 @@ pod install
 
 ### نصب دستی
 
-کیت توسعه‌دهندگان سیبچه را می‌توانید از [اینجا](https://cdn.sibche.com/sibche-developer/SibcheStoreKit-2.0.3.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
+کیت توسعه‌دهندگان سیبچه را می‌توانید از [اینجا](https://cdn.sibche.com/sibche-developer/SibcheStoreKit-3.0.0.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
 
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg)
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg"/>
+</a>
 
 سپس فایل پلاگین را انتخاب نموده و گزینه `add` را بزنید. سپس همانند شکل زیر، از بخش `General` از داخل تنظیمات پروژه، SibcheStoreKit.framework را از قسمت `Linked Frameworks and Libraries` حذف نمایید:
 
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc2.jpg)
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc2.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc2.jpg"/>
+</a>
 
 سپس دکمه + از بخش `Embedded Binaries` را انتخاب نموده و `SibcheStoreKit.framework` را انتخاب نموده و دکمه `Add` را بزنید. همانند عکسهای زیر:
 
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc3.jpg)
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc3.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc3.jpg"/>
+</a>
 
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc4.jpg)
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc4.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc4.jpg"/>
+</a>
 
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc5.jpg)
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc5.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc5.jpg"/>
+</a>
 
 ## تنظیمات اولیه
-
-### افزودن scheme سیبچه به پروژه
-
-ابتدا بایستی scheme مربوط به اپ سیبچه را به لیست scheme های قابل چک خود اضافه نمایید. برای این کار، ابتدا برنامه را درون Xcode باز کرده و فایل info.plist برنامه را باز کرده و همانند شکل تنظیمات مختص بررسی scheme سیبچه را به این لیست اضافه نمایید (ابتدا دکمه + را زده و اسم LSApplicationQueriesSchemes را وارد کرده و سپس نوع کلید را به Array تغییر داده و عبارت newsibche را به عنوان زیربخش این آرایه وارد کنید):
-
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc6.jpg)
-
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc7.jpg)
-
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc8.jpg)
-
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc9.jpg)
-
-یا نوشته زیر را به `info.plist` خود اضافه نمایید:
-
-```xml
-<key>LSApplicationQueriesSchemes</key>
-<array>
-	<string>newsibche</string>
-</array>
-```
 
 ### افزودن Scheme مختص برنامه شما
 
@@ -105,23 +61,29 @@ pod install
 
 برای اضافه کردن scheme اختصاصی بایستی طبق مراحل زیر تنظیمات برنامه را داخل Xcode باز کرده و سپس به تب info مراجعه نمایید:
 
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc10.jpg)
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc10.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc10.jpg"/>
+</a>
 
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc11.jpg)
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc11.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc11.jpg"/>
+</a>
 
 سپس همانند شکل، url اختصاصی اپلیکیشن را اضافه نمایید:
 
-![Screenshot](https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc12.jpg)
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc12.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc12.jpg"/>
+</a>
 
-به جای test، نام این scheme که میتواند باندل آیدی برنامه و یا هر اسم دیگری باشد را وارد کرده و سپس به جای testapp بایستی scheme مورد نظرتان را وارد نمایید. به عنوان مثال scheme تنظیم شده **تلگرام** `tg` و scheme تنظیم شده برای برنامه **اینستاگرام** `instagram` میباشد. لیست کامل scheme برنامه‌های معروف را میتوانید از [اینجا](https://ios.gadgethacks.com/news/always-updated-list-ios-app-url-scheme-names-0184033/) مشاهده نمایید.
+به جای test، نام دلخواهی را تنظیم کرده و به جای testapp بایستی scheme مورد نظرتان را وارد نمایید. به عنوان مثال scheme تنظیم شده **تلگرام** `tg` و scheme تنظیم شده برای برنامه **اینستاگرام** `instagram` میباشد. لیست کامل scheme برنامه‌های معروف را میتوانید از
+[اینجا](https://ios.gadgethacks.com/news/always-updated-list-ios-app-url-scheme-names-0184033/)
+مشاهده نمایید.
 
 <aside class="warning">
 توصیه اکید می‌شود از scheme استفاده کنید که مختص شما باشد و ترجیحا طولانی باشد تا با برنامه‌های دیگر در تداخل نباشد.
 </aside>
 
 ### افزودن کیت توسعه‌دهنده به AppDelegate
-
-ابتدا کد اجرای پلاگین را داخل تابع didFinishLaunchingWithOptions اضافه نمایید:
 
 ```objective_c
 #import "AppDelegate.h"
@@ -142,9 +104,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-لازم به ذکر است که به جای `YOUR_API_KEY` بایستی API Key گرفته شده از پنل دولوپری سیبچه را قرار دهید و به جای `YOUR_SCHEME` واژه scheme اضافه شده در مرحله قبل را جایگذاری نمایید.
+ابتدا کد اجرای کیت توسعه‌دهندگان را داخل تابع `didFinishLaunchingWithOptions` اضافه نمایید:
 
-سپس امکان فراخوانی باز شدن url را نیز به پلاگین بدهید:
+<br/>
+
+لازم به ذکر است که به جای `YOUR_API_KEY` بایستی کلید برنامه گرفته شده از پنل توسعه‌دهندگان سیبچه را قرار دهید و به جای `YOUR_SCHEME` واژه scheme اضافه شده در مرحله قبل را جایگذاری نمایید.
+
+<br/>
+<br/>
 
 ```objective_c
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
@@ -160,31 +127,37 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 }
 ```
 
-## گرفتن لیست پکیجهای قابل خرید
+سپس امکان فراخوانی باز شدن url را نیز به کیت توسعه‌دهندگان بدهید:
 
-پس از تنظیم برنامه، میتوانید پکیجهای قابل خرید را مشاهده نمایید. کافیست همانند دستور زیر اقدام به فراخوانی API مورد نظر نمایید:
+##کلاس‌های مورد استفاده در کیت توسعه‌دهندگان
 
-```objective_c
-[SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, SibcheError* error, NSArray *packagesArray) {
-    // Your block code for handling of packages list
-}];
-```
+برای خرید، فعال‌سازی و استفاده از بسته‌های سیبچه، کلاسهای زیر ایجاد شده است که در ادامه در مورد هر کدام توضیحاتی ارائه خواهیم کرد.
 
-```swift
-SibcheStoreKit.fetch { (isSuccessful, error, packagesArray) in
-    // Your block code for handling of packages list
-}
-```
+- `SibchePackage`:
+این کلاس، نمایانگر بسته قابل خریدی هست که داخل پنل توسعه‌دهندگان اقدام به تعریفشان کرده‌اید. 
 
+- `SibchePurchasePackage`:
+این کلاس، نمایانگر خرید متناظری از کاربر هست که به یک بسته SibchePackage اختصاص یافته است. این کلاس، شامل اطلاعات خرید، زمان خرید، و تاریخ انقضا و ... خواهد بود.
+
+- `SibcheError`:
+این کلاس، در مواقع رخداد خطا به شما ارجاع داده خواهد شد که شامل اطلاعات بیشتر از خطاهای رخ داده است. اطلاعاتی از قبیل خطا و Http status code و ...
+
+###SibchePackage
 سه نوع بسته قابل خرید داریم که عبارتند از:
 
-- `SibcheConsumablePackage`: بسته‌هایی که قابل مصرف هستند که خریداری شده و داخل بازی یا برنامه مصرف می‌شود. مانند بسته‌ی ۵۰۰ سکه طلا
-- `SibcheNonConsumablePackage`: بسته‌هایی که قابل مصرف نیستند و فقط یکبار خریداری می‌شوند. مانند بسته‌ی باز شدن قابلیت آپلود آواتار یا تغییر نام
-- `SibcheSubscriptionPackage`: بسته‌هایی هستند که به مدت محدود قابل استفاده بوده و پس از اتمام زمان آنها، کاربر مجاز به استفاده از آن قابلیت نیست. به عنوان مثال، قابلیت استفاده از امکانات ویژه به مدت یک سال
+- بسته‌های قابل خرید مصرفی یا `SibcheConsumablePackage`:
+ بسته‌هایی که قابل مصرف هستند که خریداری شده و داخل بازی یا برنامه مصرف می‌شود. مانند بسته‌ی ۵۰۰ سکه طلا یا شارژ قابل مصرف داخل برنامه.
 
-توجه نمایید که پارامتر اول، تابع مورد نظر برای فراخوانی، پس از آماده‌سازی بسته‌ها توسط پلاگین می‌باشد.
+این بسته ها تا زمانی که مصرف نشده‌اند، فعال و معتبر می‌باشند و پس از مصرف، قابل خرید مجدد هستند. 
 
-در پاسخ، در صورت موفقیت، پلاگین بسته‌های قابل خرید را به عنوان پارامتر پاسخ به شما تحویل میدهد. این پارامتر آرایه‌ای از بسته‌های قابل خرید می‌باشد. این بسته‌ها از نوع `SibchePackage` هستند. مدل `SibchePackage` شامل سه نوع متفاوتی از بسته‌ها می‌باشد که در بالا اشاره شد. ساختار `SibchePackage` شامل توابع زیر می‌باشد:
+- بسته‌های قابل خرید غیر مصرفی یا `SibcheNonConsumablePackage`:
+بسته‌هایی که قابل مصرف نیستند و فقط یکبار خریداری می‌شوند. مانند بسته‌ی باز شدن قابلیت آپلود آواتار یا تغییر نام.
+
+این بسته ها، فقط یکبار قابل خرید هستند و پس از خرید، همواره در لیست بسته‌های فعال کاربر خواهند بود.
+
+
+- بسته‌های اشتراک یا `SibcheSubscriptionPackage`:
+بسته‌هایی هستند که به مدت محدود قابل استفاده بوده و پس از اتمام زمان آنها، کاربر مجاز به استفاده از آن قابلیت نیست. به عنوان مثال، قابلیت استفاده از امکانات ویژه به مدت یک سال
 
 ```objective_c
 - (NSString*)packageId;
@@ -208,7 +181,14 @@ var totalPrice: NSNumber
 var discount: NSNumber
 ```
 
-بسته‌های `SibcheConsumablePackage` و `SibcheNonConsumablePackage` فقط همین توابع را دارند ولی بسته‌های `SibcheSubscriptionPackage` علاوه بر این توابع، داری توابع زیر نیز هست:
+همه این سه مدل از مدل والد `SibchePackage` گرفته شده‌اند و به صورت عمومی شامل توابع روبرو هستند.
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ```objective_c
 - (NSString*)duration;
@@ -220,84 +200,9 @@ var duration: String
 var group: String
 ```
 
-در صورت ناموفق بودن درخواست، پارمتری با نام error از نوع `‍‍SibcheError` ارسال میشود که این پارامتر شامل خصوصیات زیر است:
+علاوه بر این توابع، کلاس `SibcheSubscriptionPackage` شامل توابع اضافی تر روبرو نیز هست:
 
-```objective_c
-@property NSNumber* errorCode;
-@property NSString* message;
-@property NSNumber* statusCode;
-```
-
-errorCode همان شماره خطایی هست که مطابق جدول زیر ایجاد شده است. message پیغام خطایی هست که از طرف سرور دریافت شده. statusCode همان شماره خطای http هست که سرور در جواب درخواست http ما داده است.
-
-| شماره errorCode | دلیل خطای مربوطه                         |
-| --------------- | ---------------------------------------- |
-| 1000            | خطای نامشخص                              |
-| 1001            | این بسته قبلا خریداری شده است            |
-| 1002            | از ادامه عملیات منصرف شد                 |
-| 1003            | در فرایند ورود (لاگین) دچار مشکل شده‌ایم |
-
-## گرفتن اطلاعات بسته مشخص
-
-با در اختیار داشتن آیدی یا کد باندل بسته مورد نظر می‌توانید اطلاعات آن بسته را در اختیار بگیرید. نحوه استفاده از این API به شکل زیر است:
-
-```objective_c
-// Both package bundle code & package id is acceptable
-
-[SibcheStoreKit fetchInAppPurchasePackage:@"com.example.testapp" withPackagesCallback:^(BOOL isSuccessful, SibcheError* error, SibchePackage *package) {
-   // Your block code for handling of packages list
-}];
-```
-
-```swift
-// Both package bundle code & package id is acceptable
-
-SibcheStoreKit.fetch(inAppPurchasePackage: "com.example.testapp") { (isSuccessful, error, package) in
-    // Your block code for handling of packages list
-}
-```
-
-پارامتر اول داده شده، همان callback ارسال شده ما است که پس از مشخص شدن وضعیت درخواست، فراخوانی خواهد شد. در صورت موفقیت، بسته‌ی مورد نظر در قالب آبجکت `SibchePackage` (بسته به نوع بسته) به شما ارسال خواهد شد.
-
-## خرید بسته مشخص
-
-پس از گرفتن لیست پکیج‌ها، میتوانید درخواست خرید این بسته‌ها را از طریق API زیر به پلاگین بدهید. در ادامه ما در صورت نیاز کاربر را لاگین کرده و فرایند پرداخت را هندل میکنیم. سپس موفقیت یا ناموفق بودن خرید را به اطلاع شما میدهیم.
-
-```objective_c
-// Both package bundle code & package id is acceptable
-
-[SibcheStoreKit purchasePackage:@"com.example.testapp" withCallback:^(BOOL isSuccessful, SibcheError* error) {
-    // Your block code for handling of purchase callback
-}];
-```
-
-```swift
-// Both package bundle code & package id is acceptable
-
-SibcheStoreKit.purchasePackage("com.example.testapp") { (isSuccessful, error) in
-  // Your block code for handling of purchase callback
-}
-```
-
-با استفاده از این دستور، پلاگین فرآیند لاگین و پرداخت را هندل کرده و در نهایت موفقیت و یا عدم موفقیت را به شما خبر خواهد داد.
-
-## گرفتن لیست بسته های خریداری شده
-
-با استفاده از این دستور، میتوانید لیست بسته‌های فعال (خریداری شده) کاربر را بدست آورید. کافیست همانند دستور زیر، API پلاگین را فراخوانی نمایید.
-
-```objective_c
-[SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError* error, NSArray *purchasePackagesArray) {
-  // Your block code for handling of packages list
-}];
-```
-
-```swift
-SibcheStoreKit.fetchActive { (isSuccessful, error, purchasePackagesArray) in
-  // Your block code for handling of packages list
-}
-```
-
-در پاسخ پلاگین موفقیت/عدم موفقیت درخواست و نیز آرایه‌ای از بسته‌های خریداری شده فعال را برمیگرداند. توجه نمایید که این آرایه، آرایه‌ای از نوع `SibchePurchasePackage` است و شامل توابع زیر هست:
+###SibchePurchasePackage
 
 ```objective_c
 - (NSString*)purchasePackageId;
@@ -317,15 +222,141 @@ var createdAt: NSDate
 var package: SibchePackage
 ```
 
-توجه نمایید که منظور از وضعیت فعال بسته‌ها، برای هر نوع از بسته‌ها متفاوت است که به شرح زیر میباشد:
+این کلاس، شامل تناظر خرید کاربر به بسته‌های شما می‌باشد. این کلاس شامل توابع روبروست:
+
+<br/>
+<br/>
+<br/>
+
+###SibcheError
+
+```objective_c
+@property NSNumber* errorCode;
+@property NSString* message;
+@property NSNumber* statusCode;
+```
+
+```swift
+var NSNumber: errorCode
+var message: String
+var NSNumber: statusCode
+```
+این کلاس در مواقع بروز خطا به شما داده خواهد شد و شامل خصوصیات روبرو می‌باشد:
+
+<br/>
+<br/>
+
+- errorCode: همان شماره خطایی هست که مطابق جدول زیر ایجاد شده است.
+- message: پیغام خطایی هست که از طرف سرور دریافت شده است.
+- statusCode:  همان شماره خطای http هست که سرور در جواب درخواست ما داده است.
+
+| شماره errorCode | دلیل خطای مربوطه                         |
+| --------------- | ---------------------------------------- |
+| 1000            | خطای نامشخص                              |
+| 1001            | این بسته قبلا خریداری شده است            |
+| 1002            | کاربر از ادامه عملیات منصرف شد                 |
+| 1003            | در فرایند ورود (لاگین) دچار مشکل شده‌ایم |
+
+## گرفتن لیست بسته‌های قابل خرید
+
+```objective_c
+[SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, SibcheError* error, NSArray *packagesArray) {
+    // Your block code for handling of packages list
+}];
+```
+
+```swift
+SibcheStoreKit.fetch { (isSuccessful, error, packagesArray) in
+    // Your block code for handling of packages list
+}
+```
+
+پس از تنظیم برنامه، میتوانید بسته‌های قابل خرید را مشاهده نمایید. کافیست همانند کد روبرو اقدام به فراخوانی تابع مورد نظر نمایید:
+
+<br/>
+
+در پاسخ، در صورت موفقیت، کیت توسعه‌دهندگان بسته‌های قابل خرید را به عنوان پارامتر پاسخ به شما تحویل میدهد. این پارامتر آرایه‌ای از بسته‌های قابل خرید می‌باشد. این بسته‌ها از نوع `SibchePackage` هستند. 
+
+در صورت ناموفق بودن درخواست، پارمتری با نام error از نوع `‍‍SibcheError` ارسال می‌شود.
+
+## گرفتن اطلاعات بسته مشخص
+
+```objective_c
+// Both package bundle code & package id is acceptable
+
+[SibcheStoreKit fetchInAppPurchasePackage:@"com.example.testapp" withPackagesCallback:^(BOOL isSuccessful, SibcheError* error, SibchePackage *package) {
+   // Your block code for handling of packages list
+}];
+```
+
+```swift
+// Both package bundle code & package id is acceptable
+
+SibcheStoreKit.fetch(inAppPurchasePackage: "com.example.testapp") { (isSuccessful, error, package) in
+    // Your block code for handling of packages list
+}
+```
+
+با در اختیار داشتن آیدی یا کد باندل بسته مورد نظر می‌توانید اطلاعات آن بسته را در اختیار بگیرید. نحوه استفاده از این API به شکل روبرو است:
+
+<br/>
+
+پارامتر اول داده شده، همان callback ارسال شده ما است که پس از مشخص شدن وضعیت درخواست، فراخوانی خواهد شد. در صورت موفقیت، بسته‌ی مورد نظر در قالب آبجکت `SibchePackage` (بسته به نوع بسته) به شما ارسال خواهد شد.
+
+## خرید بسته مشخص
+
+```objective_c
+// Both package bundle code & package id is acceptable
+
+[SibcheStoreKit purchasePackage:@"com.example.testapp" withCallback:^(BOOL isSuccessful, SibcheError* error, SibchePurchasePackage* purchasePackage) {
+    // Your block code for handling of purchase callback
+}];
+```
+
+```swift
+// Both package bundle code & package id is acceptable
+
+SibcheStoreKit.purchasePackage("com.example.testapp") { (isSuccessful, error, purchasePackage) in
+  // Your block code for handling of purchase callback
+}
+```
+
+پس از گرفتن لیست بسته‌ها، میتوانید درخواست خرید این بسته‌ها را از طریق کد روبرو به کیت توسعه‌دهندگان بدهید. در ادامه، کیت توسعه‌دهندگان، در صورت نیاز کاربر را لاگین کرده و فرایند پرداخت را پیگیری خواهد کرد. سپس موفق یا ناموفق بودن خرید را به همراه `SibchePurchasePackage` به اطلاع شما خواهد رساند.
+
+<br/>
+
+## گرفتن لیست بسته های خریداری شده
+
+```objective_c
+[SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError* error, NSArray *purchasePackagesArray) {
+  // Your block code for handling of packages list
+}];
+```
+
+```swift
+SibcheStoreKit.fetchActive { (isSuccessful, error, purchasePackagesArray) in
+  // Your block code for handling of packages list
+}
+```
+
+با استفاده از این دستور، میتوانید لیست بسته‌های فعال (خریداری شده) کاربر را بدست آورید. کافیست همانند کد روبر، تابع مربوطه کیت توسعه‌دهندگان را فراخوانی نمایید.
+
+<br/>
+<br/>
+
+در پاسخ، کیت توسعه‌دهندگان موفقیت/عدم موفقیت درخواست و نیز آرایه‌ای از بسته‌های خریداری شده‌ی فعال را برمی‌گرداند. توجه نمایید که این آرایه، آرایه‌ای از نوع `SibchePurchasePackage` است.
+
+منظور از بسته‌های فعال، بسته‌هایی هستند که خریداری شده‌اند و هنوز مصرف نشده‌اند و یا تاریخ انقضایشان به اتمام نرسیده است.
+تعریف سیبچه از بسته‌های فعال برای هر کدام از نوع بسته‌ها به شرح زیر می‌باشد:
 
 - `SibcheConsumablePackage`: بسته‌هایی که خریداری شده‌اند ولی هنوز مصرف (Consume) نشده‌اند.
-- `SibcheNonConsumablePackage`: بسته‌هایی که خریداری شده‌اند.
+- `SibcheNonConsumablePackage`: بسته‌هایی که خریداری شده‌اند. چون این بسته‌ها یکبار خرید هستند، در صورت خرید، به صورت مادام‌العمر فعال هستند.
 - `SibcheSubscriptionPackage`: بسته‌هایی که خریداری شده‌اند ولی هنوز از تاریخ انقضای آنها باقی مانده است.
 
-## مصرف کردن بسته‌های قابل مصرف (Consumable packages)
-
-برای مصرف کردن بسته‌های قابل مصرف (Consumable) بایستی شبیه دستور زیر، تابع مربوطه از پلاگین را فراخوانی کنیم:
+## مصرف کردن بسته‌ها در سمت کلاینت
+<aside class="success">
+در صورتی که بخواهید بسته‌های قابل مصرف را در سمت کلاینت (درون خود بازی/برنامه) مصرف کنید، بایستی از این روش استفاده کنید. ولی اگر قصد مصرف و اعتبارسنجی سمت سرور داشته باشید، به بخش بعدی مراجعه نمایید.
+</aside>
 
 ```objective_c
 [SibcheStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful, SibcheError* error) {
@@ -339,4 +370,59 @@ SibcheStoreKit.consumePurchasePackage(purchasePackageData.purchasePackageId) { (
 }
 ```
 
-در پاسخ پس از مشخص شدن وضعیت درخواست، پلاگین callback داده شده را فراخوانی خواهد کرد. در صورت موفقیت، یعنی بسته مورد نظر با موفقیت مصرف شده و در صورت عدم موفقیت، در مصرف بسته مورد نظر دچار مشکلی شده‌ایم.
+برای مصرف کردن بسته‌های قابل مصرف (Consumable) بایستی شبیه دستور زیر، تابع مربوطه از کیت توسعه‌دهندگان را فراخوانی کنیم:
+
+در پاسخ پس از مشخص شدن وضعیت درخواست، کیت توسعه‌دهندگان callback داده شده را فراخوانی خواهد کرد.
+در صورت موفقیت، یعنی بسته مورد نظر با موفقیت مصرف شده و در صورت عدم موفقیت، در مصرف بسته مورد نظر، دچار مشکلی شده‌ایم.
+
+## مصرف کردن بسته‌ها در سمت سرور
+
+برای این کار بایستی، کد `purchasePackageId` که بخشی از کلاس `SibchePurchasePackage` می‌باشد را در دست داشته باشید. سپس لینکی به شکل زیر درست کنید و دیتای وریفای را از سرور بگیرید **(آدرس‌ها Case sensitive هستند!)**:
+
+`https://api.sibche.com/sdk/userInAppPurchasePackages/{purchasePackageId}/verifyconsume`
+
+همچنین برای این درخواست، بایستی هدر HTTP با اسم `App-Key` تنظیم نمایید. این کلید از طریق پنل توسعه‌دهندگان به صورت اختصاصی برای هر برنامه قابل دریافت است. اسم این کلید، **کلید سرور** نام دارد و عبارت ۳۰ کاراکتری است.
+
+```shell
+curl --header "App-Key: YOUR_SERVER_KEY" -X POST \
+'https://api.sibche.com/sdk/userInAppPurchasePackages/1/verifyConsume'
+```
+
+نمونه کد قابل فراخوانی برای curl به شکل روبرو خواهد بود:
+
+<br/>
+<br/>
+
+در جواب، سرور پاسخی با یکی از **HTTP Response Code** های زیر خواهد داد:
+
+```json
+{
+  "message" : "your package is already is used or not found",
+  "status_code" : 404
+}
+```
+
+- HTTP Status Code 404 (Not Found):
+در صورتی که آدرس لینک را اشتباه وارد کرده باشید، یا بسته مورد نظر با purchasePackageId اشتباه وارد شده باشد، یا بسته مورد نظر قبلا مصرف شده باشد این خطا رخ خواهد داد.  
+در این صورت، سرور در متن پاسخ، پاسخی شبیه روبرو خواهد داد:
+
+<br/>
+<br/>
+
+```json
+{
+  "message" : "app-key is not valid",
+  "status_code" : 401
+}
+```
+
+- HTTP Status Code 401 (Unauthorized):
+یعنی اینکه کلید سروری که بر روی App-Key تنظیم شده است، غیر معتبر و اشتباه است.
+در این صورت، سرور در متن پاسخ، پاسخی شبیه روبرو خواهد داد:
+
+<br/>
+<br/>
+
+- HTTP Status Code 202 (Accepted / OK):
+در این صورت یعنی، بسته مورد نظر با موفقیت مصرف شد و خرید کاربر، معتبر بوده است.
+برای این حالت،‌ سرور در متن پاسخ، هیچ نوشته‌ای بر نخواهد گرداند.
