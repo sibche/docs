@@ -379,7 +379,7 @@ SibcheStoreKit.consumePurchasePackage(purchasePackageData.purchasePackageId) { (
 
 برای این کار بایستی، کد `purchasePackageId` که بخشی از کلاس `SibchePurchasePackage` می‌باشد را در دست داشته باشید. سپس لینکی به شکل زیر درست کنید و دیتای وریفای را از سرور بگیرید **(آدرس‌ها Case sensitive هستند!)**:
 
-`https://api.sibche.com/sdk/userInAppPurchasePackages/{purchasePackageId}/verifyconsume`
+`https://api.sibche.com/sdk/userInAppPurchasePackages/{purchasePackageId}/verifyConsume`
 
 همچنین برای این درخواست، بایستی هدر HTTP با اسم `App-Key` تنظیم نمایید. این کلید از طریق پنل توسعه‌دهندگان به صورت اختصاصی برای هر برنامه قابل دریافت است. اسم این کلید، **کلید سرور** نام دارد و عبارت ۳۰ کاراکتری است.
 
