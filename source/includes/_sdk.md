@@ -25,7 +25,7 @@ pod install
 
 ### نصب دستی
 
-کیت توسعه‌دهندگان سیبچه را می‌توانید از [اینجا](https://github.com/sibche/SibcheStoreKit/releases/download/4.0.1/SibcheStoreKit-v4.0.1.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
+کیت توسعه‌دهندگان سیبچه را می‌توانید از [اینجا](https://github.com/sibche/SibcheStoreKit/releases/latest/download/SibcheStoreKit.zip) دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:
 
 <a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg">
     <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg"/>
@@ -80,7 +80,7 @@ pod install
 مشاهده نمایید.
 
 <aside class="warning">
-توصیه اکید می‌شود از scheme استفاده کنید که مختص شما باشد و ترجیحا طولانی باشد تا با برنامه‌های دیگر در تداخل نباشد.
+توصیه اکید می‌شود از scheme استفاده کنید که مختص شما باشد و ترجیحا طولانی باشد. توجه فرمایید که اگر با برنامه‌های دیگر در تداخل باشد، در فرآیند پرداخت دچار مشکل خواهید شد.
 </aside>
 
 ### افزودن کیت توسعه‌دهنده به AppDelegate
@@ -191,7 +191,7 @@ var discount: NSNumber
 <br/>
 
 ```objective_c
-- (NSString*)duration;
+- (NSNumber*)duration;
 - (NSString*)group;
 ```
 
@@ -256,6 +256,7 @@ var NSNumber: statusCode
 | 1001            | این بسته قبلا خریداری شده است            |
 | 1002            | کاربر از ادامه عملیات منصرف شد                 |
 | 1003            | در فرایند ورود (لاگین) دچار مشکل شده‌ایم |
+| 1004            |  برنامه به درستی initiate نشده است |
 
 ## گرفتن لیست بسته‌های قابل خرید
 
@@ -426,3 +427,77 @@ curl --header "App-Key: YOUR_SERVER_KEY" -X POST \
 - HTTP Status Code 202 (Accepted / OK):
 در این صورت یعنی، بسته مورد نظر با موفقیت مصرف شد و خرید کاربر، معتبر بوده است.
 برای این حالت،‌ سرور در متن پاسخ، هیچ نوشته‌ای بر نخواهد گرداند.
+
+##درخواست وارد شدن (Login) کاربر به کیت توسعه‌دهندگان سیبچه
+
+<aside class="warning">
+توصیه می‌کنیم از این بخش به صورت دستی استفاده نکنید چرا که در فرآیند پرداخت، اگر کاربر لاگین نکرده باشد، کتابخانه سیبچه خود اقدام به لاگین کاربر می‌کند.
+</aside>
+
+```objective_c
+[SibcheStoreKit loginUser:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
+    // Your code for handling of login result
+}];
+```
+
+```swift
+SibcheStoreKit.loginUser { (isLogginSuccessful, error, userName, userId) in
+    // Your code for handling of login result
+}
+```
+
+با استفاده از این دستور، میتوانید به کتابخانه سیبچه، درخواست لاگین کاربر را بدهید. کافیست همانند کد روبر، تابع مربوطه کیت توسعه‌دهندگان را فراخوانی نمایید.
+
+<br/>
+<br/>
+
+در جواب، کیت توسعه دهندگان، موفقیت لاگین و اروری که بهش برخورده را برمیگرداند. همچنین، در صورت موفقیت و در صورت موجود بودن، نام کاربر و آیدی کاربر را برمی‌گرداند.
+
+##درخواست خارج شدن (Logout) کاربر از کیت توسعه‌دهندگان سیبچه
+
+<aside class="warning">
+توصیه اکید میکنیم، زمانی از این تابع استفاده نمایید که کاربر دکمه بازیابی خرید را زده و درخواست بازیابی خرید خود را دارد.
+</aside>
+
+```objective_c
+[SibcheStoreKit logoutUser:^{
+    // Your code for handling of logout result
+}];
+```
+
+```swift
+SibcheStoreKit.logoutUser {
+    // Your code for handling of logout result
+}
+```
+
+با استفاده از این دستور می‌توانید کاربر فعلی لاگین کرده داخل سیستم را از کیت توسعه‌دهندگان خارج نمایید و کلیه اطلاعات session او را پاک نمایید.
+این تابع پس از اتمام کار، در قالب callback به شما جواب خواهد داد.
+
+##گرفتن اطلاعات کاربر فعلی
+
+```objective_c
+[SibcheStoreKit getCurrentUserData:^(BOOL isSuccessful, SibcheError *error, LoginStatusType loginStatus, NSString *userCellphoneNumber, NSString *userId) {
+    // Your code for handling of get current user data result
+}];
+```
+
+```swift
+SibcheStoreKit.getCurrentUserData { (isSuccessful, error, loginStatus, userCellphoneNumber, userId) in
+    // Your code for handling of get current user data result
+}
+```
+
+زمانی که نیاز دارید تا شماره تلفن و نیز شماره کاربری (userId) کاربر را دریافت نمایید، می‌توانید از تابع روبرو استفاده نمایید.
+
+<br/>
+<br/>
+
+در جواب، کیت توسعه‌دهندگان، نتیجه موفق بودن عملیات و نیز ارور رخ داده را برمی‌گرداند. در حالت عادی، بایستی عملیات موفق باشد ولی ناموفق بودن عملیات می‌تواند به دلایل شبکه‌ای مختلفی همانند موارد زیر باشد:
+
+- دسترسی به اینترنت مقدور نبود
+- هر اتفاق ناخواسته شبکه‌ای رخ داده است
+- سرور سیبچه در دسترس نیست
+
+همچنین در جواب، پارامتر سومی هم دارد که وضعیت کاربر را از لحاظ لاگین بودن/نبودن به اطلاع شما می‌رساند. در صورتی که لاگین باشد، از نوع `‍loginStatusTypeIsLoggedIn‍‍` جواب خواهد داد. در صورت لاگین نبودن نیز جواب داده شده از نوع `loginStatusTypeIsLoggedOut` می‌باشد. در صورتی که عملیات ناموفق باشد و از وضعیت لاگین بودن کاربر مطمئن نباشیم نیز جواب ‍`loginStatusTypeHaveTokenButFailedToCheck` را خواهیم داد.
+پارامتر‌های بعدی نیز شامل شماره تلفن کاربر و نیز id کاربر می‌باشد که در پاسخ به شما داده خواهد شد.
