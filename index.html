@@ -252,6 +252,15 @@
                   <li>
                     <a href="#11d829c26b" class="toc-h2 toc-link" data-title="مصرف کردن بسته‌ها در سمت سرور">مصرف کردن بسته‌ها در سمت سرور</a>
                   </li>
+                  <li>
+                    <a href="#login" class="toc-h2 toc-link" data-title="درخواست وارد شدن (Login) کاربر به کیت توسعه‌دهندگان سیبچه">درخواست وارد شدن (Login) کاربر به کیت توسعه‌دهندگان سیبچه</a>
+                  </li>
+                  <li>
+                    <a href="#logout" class="toc-h2 toc-link" data-title="درخواست خارج شدن (Logout) کاربر از کیت توسعه‌دهندگان سیبچه">درخواست خارج شدن (Logout) کاربر از کیت توسعه‌دهندگان سیبچه</a>
+                  </li>
+                  <li>
+                    <a href="#82c79511e7" class="toc-h2 toc-link" data-title="گرفتن اطلاعات کاربر فعلی">گرفتن اطلاعات کاربر فعلی</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -280,7 +289,7 @@
 <pre class="highlight shell tab-shell"><code>pod repo update
 pod install
 </code></pre><h3 id='bc95e8754c'>نصب دستی</h3>
-<p>کیت توسعه‌دهندگان سیبچه را می‌توانید از <a href="https://github.com/sibche/SibcheStoreKit/releases/download/4.0.1/SibcheStoreKit-v4.0.1.zip">اینجا</a> دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:</p>
+<p>کیت توسعه‌دهندگان سیبچه را می‌توانید از <a href="https://github.com/sibche/SibcheStoreKit/releases/latest/download/SibcheStoreKit.zip">اینجا</a> دانلود کرده و به پروژه خود اضافه کنید. برای اینکار فایل دانلود شده را از حالت زیپ در بیاورید. سپس فایل SibcheStoreKit.framework را به داخل پروژه خود کپی کرده و همانند زیر به پروژه اضافه نمایید:</p>
 
 <p><a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg">
     <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg"/>
@@ -331,7 +340,7 @@ pod install
 مشاهده نمایید.</p>
 
 <aside class="warning">
-توصیه اکید می‌شود از scheme استفاده کنید که مختص شما باشد و ترجیحا طولانی باشد تا با برنامه‌های دیگر در تداخل نباشد.
+توصیه اکید می‌شود از scheme استفاده کنید که مختص شما باشد و ترجیحا طولانی باشد. توجه فرمایید که اگر با برنامه‌های دیگر در تداخل باشد، در فرآیند پرداخت دچار مشکل خواهید شد.
 </aside>
 <h3 id='appdelegate'>افزودن کیت توسعه‌دهنده به AppDelegate</h3><pre class="highlight objective_c tab-objective_c"><code><span class="cp">#import "AppDelegate.h"
 #import &lt;SibcheStoreKit/SibcheStoreKit.h&gt;
@@ -422,7 +431,7 @@ pod install
 <br/>
 <br/>
 <br/></p>
-<pre class="highlight objective_c tab-objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">duration</span><span class="p">;</span>
+<pre class="highlight objective_c tab-objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSNumber</span><span class="o">*</span><span class="p">)</span><span class="n">duration</span><span class="p">;</span>
 <span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">group</span><span class="p">;</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">var</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">String</span>
 <span class="k">var</span> <span class="nv">group</span><span class="p">:</span> <span class="kt">String</span>
@@ -485,6 +494,10 @@ pod install
 <tr>
 <td>1003</td>
 <td>در فرایند ورود (لاگین) دچار مشکل شده‌ایم</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>برنامه به درستی initiate نشده است</td>
 </tr>
 </tbody></table>
 <h2 id='c9f8a646e3'>گرفتن لیست بسته‌های قابل خرید</h2><pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">fetchInAppPurchasePackages</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span><span class="o">*</span> <span class="n">error</span><span class="p">,</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">packagesArray</span><span class="p">)</span> <span class="p">{</span>
@@ -615,6 +628,58 @@ pod install
 در این صورت یعنی، بسته مورد نظر با موفقیت مصرف شد و خرید کاربر، معتبر بوده است.
 برای این حالت،‌ سرور در متن پاسخ، هیچ نوشته‌ای بر نخواهد گرداند.</li>
 </ul>
+<h2 id='login'>درخواست وارد شدن (Login) کاربر به کیت توسعه‌دهندگان سیبچه</h2>
+<aside class="warning">
+توصیه می‌کنیم از این بخش به صورت دستی استفاده نکنید چرا که در فرآیند پرداخت، اگر کاربر لاگین نکرده باشد، کتابخانه سیبچه خود اقدام به لاگین کاربر می‌کند.
+</aside>
+<pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">loginUser</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isLoginSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span><span class="o">*</span> <span class="n">error</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userName</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Your code for handling of login result
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="n">loginUser</span> <span class="p">{</span> <span class="p">(</span><span class="n">isLogginSuccessful</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">userName</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// Your code for handling of login result</span>
+<span class="p">}</span>
+</code></pre>
+<p>با استفاده از این دستور، میتوانید به کتابخانه سیبچه، درخواست لاگین کاربر را بدهید. کافیست همانند کد روبر، تابع مربوطه کیت توسعه‌دهندگان را فراخوانی نمایید.</p>
+
+<p><br/>
+<br/></p>
+
+<p>در جواب، کیت توسعه دهندگان، موفقیت لاگین و اروری که بهش برخورده را برمیگرداند. همچنین، در صورت موفقیت و در صورت موجود بودن، نام کاربر و آیدی کاربر را برمی‌گرداند.</p>
+<h2 id='logout'>درخواست خارج شدن (Logout) کاربر از کیت توسعه‌دهندگان سیبچه</h2>
+<aside class="warning">
+توصیه اکید میکنیم، زمانی از این تابع استفاده نمایید که کاربر دکمه بازیابی خرید را زده و درخواست بازیابی خرید خود را دارد.
+</aside>
+<pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">logoutUser</span><span class="p">:</span><span class="o">^</span><span class="p">{</span>
+    <span class="c1">// Your code for handling of logout result
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="n">logoutUser</span> <span class="p">{</span>
+    <span class="c1">// Your code for handling of logout result</span>
+<span class="p">}</span>
+</code></pre>
+<p>با استفاده از این دستور می‌توانید کاربر فعلی لاگین کرده داخل سیستم را از کیت توسعه‌دهندگان خارج نمایید و کلیه اطلاعات session او را پاک نمایید.
+این تابع پس از اتمام کار، در قالب callback به شما جواب خواهد داد.</p>
+<h2 id='82c79511e7'>گرفتن اطلاعات کاربر فعلی</h2><pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">getCurrentUserData</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span> <span class="o">*</span><span class="n">error</span><span class="p">,</span> <span class="n">LoginStatusType</span> <span class="n">loginStatus</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userCellphoneNumber</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Your code for handling of get current user data result
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="n">getCurrentUserData</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">loginStatus</span><span class="p">,</span> <span class="n">userCellphoneNumber</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// Your code for handling of get current user data result</span>
+<span class="p">}</span>
+</code></pre>
+<p>زمانی که نیاز دارید تا شماره تلفن و نیز شماره کاربری (userId) کاربر را دریافت نمایید، می‌توانید از تابع روبرو استفاده نمایید.</p>
+
+<p><br/>
+<br/></p>
+
+<p>در جواب، کیت توسعه‌دهندگان، نتیجه موفق بودن عملیات و نیز ارور رخ داده را برمی‌گرداند. در حالت عادی، بایستی عملیات موفق باشد ولی ناموفق بودن عملیات می‌تواند به دلایل شبکه‌ای مختلفی همانند موارد زیر باشد:</p>
+
+<ul>
+<li>دسترسی به اینترنت مقدور نبود</li>
+<li>هر اتفاق ناخواسته شبکه‌ای رخ داده است</li>
+<li>سرور سیبچه در دسترس نیست</li>
+</ul>
+
+<p>همچنین در جواب، پارامتر سومی هم دارد که وضعیت کاربر را از لحاظ لاگین بودن/نبودن به اطلاع شما می‌رساند. در صورتی که لاگین باشد، از نوع <code>‍loginStatusTypeIsLoggedIn‍‍</code> جواب خواهد داد. در صورت لاگین نبودن نیز جواب داده شده از نوع <code>loginStatusTypeIsLoggedOut</code> می‌باشد. در صورتی که عملیات ناموفق باشد و از وضعیت لاگین بودن کاربر مطمئن نباشیم نیز جواب ‍<code>loginStatusTypeHaveTokenButFailedToCheck</code> را خواهیم داد.
+پارامتر‌های بعدی نیز شامل شماره تلفن کاربر و نیز id کاربر می‌باشد که در پاسخ به شما داده خواهد شد.</p>
 
       </div>
       <div class="dark-box">
