@@ -4,6 +4,7 @@ title: مستندات سیبچه
 language_tabs: # must be one of https://git.io/vQNgJ
   - swift: Swift
   - objective_c: Objective-C
+  - csharp: C#
 
 toc_footers:
   - <a href='https://sibche.com/developer'>پنل توسعه‌دهندگان</a>
@@ -11,7 +12,9 @@ toc_footers:
   - <a href='https://github.com/lord/slate'>قدرت‌گرفته از Slate</a>
 
 includes:
+  - intro
   - sdk
+  - unity
 
 search: true
 ---
