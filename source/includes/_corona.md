@@ -9,31 +9,48 @@
 
 ## نصب پلاگین کرونا
 
-### فعالسازی پلاگین بر روی اکانت از طریق وب‌سایت کرونا
-ابتدا به این لینک مراجعه کرده و با اکانت کرونا لاگین کرده و به صورت رایگان فعالسازی نمایید
+### اضافه کردن پلاگین سیبچه به صورت دستی به پروژه کرونا
 
-### اضافه کردن سیبچه به پروژه و دانلود آن
-
-```lua
-plugins =
-{
-    ["plugin.SibcheStoreKit"] =
-    {
-        publisherId = "com.sibche",
-    }
-}
-```
-
-فایل `build.settings` را باز کرده و تکه کد روبرو را داخل `settings = {` وارد نمایید.
+ابتدا [این فایل](https://github.com/sibche/SibcheStoreKit-Corona/releases/latest/download/SibcheStoreKit.zip) را دانلود کرده و از حال زیپ در بیاورید و داخل پوشه پروژه xCode تان اضافه نمایید.
 
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+سپس همانند تصاویر زیر، این فایل را به پروژه xCode خود اضافه نمایید:
 
-و در انتها از طریق پروژه xcode، گزینه `Download Plugins` را اجرا نمایید.
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc1.png">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc1.png"/>
+</a>
+
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc2.png">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc2.png"/>
+</a>
+
+## اضافه کردن کیت توسعه‌دهندگان سیبچه به پروژه کرونا
+
+به دلیل اینکه کیت توسعه‌دهندگان سیبچه به صورت پویا (دینامیک) کار می‌کند، بایستی فایل `SibcheStoreKit.framework` را به صورت دستی به پروژه اضافه نماییم. در این مرحله همانند تصاویر زیر، این فایل را که داخل پوشه `EmbeddedFrameworks` از پوشه دانلود شده قرار دارد، همانند تصاویر زیر به پروژه اضافه می‌کنیم:
+
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc3.png">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc3.png"/>
+</a>
+
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc4.png">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc4.png"/>
+</a>
+
+سپس فایل پلاگین را انتخاب نموده و گزینه `add` را بزنید. سپس همانند شکل زیر، از بخش `General` از داخل تنظیمات پروژه، SibcheStoreKit.framework را از قسمت `Linked Frameworks and Libraries` حذف نمایید:
+
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc5.png">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc5.png"/>
+</a>
+
+سپس دکمه + از بخش `Embedded Binaries` را انتخاب نموده و `SibcheStoreKit.framework` را انتخاب نموده و دکمه `Add` را بزنید. همانند عکسهای زیر:
+
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc6.png">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc6.png"/>
+</a>
+
+<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc7.png">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc7.png"/>
+</a>
 
 ## تنظیمات اولیه (کرونا)
 
