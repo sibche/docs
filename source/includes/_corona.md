@@ -11,10 +11,10 @@
 
 ### اضافه کردن پلاگین سیبچه به صورت دستی به پروژه کرونا
 
-ابتدا [این فایل](https://github.com/sibche/SibcheStoreKit-Corona/releases/latest/download/SibcheStoreKit.zip) را دانلود کرده و از حال زیپ در بیاورید و داخل پوشه پروژه xCode تان اضافه نمایید.
+ابتدا [این فایل](https://github.com/sibche/SibcheStoreKit-Corona/releases/latest/download/SibcheStoreKit.zip) را دانلود کرده و از حال زیپ در بیاورید و داخل پوشه پروژه Xcode تان اضافه نمایید.
 
 
-سپس همانند تصاویر زیر، این فایل را به پروژه xCode خود اضافه نمایید:
+سپس همانند تصاویر زیر، این فایل را به پروژه Xcode خود اضافه نمایید:
 
 <a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc1.png">
     <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc1.png"/>
