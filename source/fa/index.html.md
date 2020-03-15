@@ -6,6 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - objective_c: Objective-C
   - csharp: C#
   - lua: Lua
+  - javascript: Javascript
 
 toc_footers:
   - <a href='/en'>English version</a>
@@ -18,6 +19,7 @@ includes:
   - sdk
   - unity
   - corona
+  - reactnative
 
 search: true
 ---
