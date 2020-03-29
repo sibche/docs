@@ -1,0 +1,992 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>مستندات سیبچه</title>
+    <link href="../images/favicon.ico" rel="icon" type="image/ico" />
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="../stylesheets/screen-d8f905b9.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-5756e892.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="en en_index" data-languages="[&quot;swift&quot;,&quot;objective_c&quot;,&quot;csharp&quot;,&quot;lua&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo-b40e35f9.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="swift">Swift</a>
+              <a href="#" data-language-name="objective_c">Objective-C</a>
+              <a href="#" data-language-name="csharp">C#</a>
+              <a href="#" data-language-name="lua">Lua</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#sibche-documentation" class="toc-h1 toc-link" data-title="Sibche Documentation">Sibche Documentation</a>
+          </li>
+          <li>
+            <a href="#installing-sdk" class="toc-h1 toc-link" data-title="Installing SDK">Installing SDK</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sdk-requirements" class="toc-h2 toc-link" data-title="SDK requirements:">SDK requirements:</a>
+                  </li>
+                  <li>
+                    <a href="#installing-sdk-2" class="toc-h2 toc-link" data-title="Installing SDK">Installing SDK</a>
+                  </li>
+                  <li>
+                    <a href="#default-settings" class="toc-h2 toc-link" data-title="Default settings:">Default settings:</a>
+                  </li>
+                  <li>
+                    <a href="#available-classes-of-use-for-the-developer-kit" class="toc-h2 toc-link" data-title="Available classes of use for the developer kit:">Available classes of use for the developer kit:</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-get-the-list-of-available-packages" class="toc-h2 toc-link" data-title="How to get the list of available packages:">How to get the list of available packages:</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-get-package-information" class="toc-h2 toc-link" data-title="How to get package information:">How to get package information:</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-purchase-a-package" class="toc-h2 toc-link" data-title="How to purchase a package:">How to purchase a package:</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-obtain-the-list-of-previous-purchases" class="toc-h2 toc-link" data-title="How to obtain the list of previous purchases:">How to obtain the list of previous purchases:</a>
+                  </li>
+                  <li>
+                    <a href="#using-up-packages-on-the-part-of-the-client" class="toc-h2 toc-link" data-title="Using up packages on the part of the client:">Using up packages on the part of the client:</a>
+                  </li>
+                  <li>
+                    <a href="#using-up-packages-on-the-part-of-the-server" class="toc-h2 toc-link" data-title="Using up packages on the part of the server:">Using up packages on the part of the server:</a>
+                  </li>
+                  <li>
+                    <a href="#client-login-request-to-the-sibche-developer-kit" class="toc-h2 toc-link" data-title="Client login request to the Sibche developer kit:">Client login request to the Sibche developer kit:</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-logout-of-the-sibche-developer-kit" class="toc-h2 toc-link" data-title="How to logout of the Sibche developer kit:">How to logout of the Sibche developer kit:</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-obtain-information-on-current-clients" class="toc-h2 toc-link" data-title="How to obtain information on current clients:">How to obtain information on current clients:</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#installing-unity-sdk" class="toc-h1 toc-link" data-title="Installing Unity SDK">Installing Unity SDK</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#unity-developer-kit-installment-requirements" class="toc-h2 toc-link" data-title="Unity developer kit installment requirements:">Unity developer kit installment requirements:</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-install-the-unity-developer-kit" class="toc-h2 toc-link" data-title="How to install the unity developer kit:">How to install the unity developer kit:</a>
+                  </li>
+                  <li>
+                    <a href="#basic-settings-unity" class="toc-h2 toc-link" data-title="Basic settings (unity):">Basic settings (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#classes-of-use-in-the-developer-kit-unity" class="toc-h2 toc-link" data-title="Classes of use in the developer kit (unity):">Classes of use in the developer kit (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-get-the-list-of-available-packages-unity" class="toc-h2 toc-link" data-title="How to get the list of available packages (unity):">How to get the list of available packages (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-get-package-information-unity" class="toc-h2 toc-link" data-title="How to get package information (unity):">How to get package information (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-purchase-a-package-unity" class="toc-h2 toc-link" data-title="How to purchase a package (unity):">How to purchase a package (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-obtain-the-list-of-previous-purchases-unity" class="toc-h2 toc-link" data-title="How to obtain the list of previous purchases (unity):">How to obtain the list of previous purchases (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#using-up-packages-on-the-part-of-the-client-unity" class="toc-h2 toc-link" data-title="Using up packages on the part of the client (unity):">Using up packages on the part of the client (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#using-up-packages-on-the-part-of-the-server-unity" class="toc-h2 toc-link" data-title="Using up packages on the part of the server (unity):">Using up packages on the part of the server (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#client-login-request-to-the-sibche-developer-kit-unity" class="toc-h2 toc-link" data-title="Client login request to the Sibche developer kit (unity):">Client login request to the Sibche developer kit (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-logout-of-the-sibche-developer-kit-unity" class="toc-h2 toc-link" data-title="How to logout of the Sibche developer kit (unity):">How to logout of the Sibche developer kit (unity):</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-obtain-information-on-current-clients-unity" class="toc-h2 toc-link" data-title="How to obtain information on current clients (unity):">How to obtain information on current clients (unity):</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='/fa'>نسخه فارسی</a></li>
+            <li><a href='https://sibche.com/developer'>Developers Panel</a></li>
+            <li><a href='https://github.com/sibche/docs/issues'>Report documentation problem</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='sibche-documentation'>Sibche Documentation</h1>
+<p>Welcome to Sibche Documentation.<br />
+If you are a Unity developer, you can find related documents in the menu on the right, selecting “Install Unity SDK” option, otherwise you can find the “Install SDK” option to be helpful for you.
+<br />At whatever point in the document, you can use the upper-left menu to select your programming language (in case you are a Unity developer, you need to use select C#)
+<br/>Best of luck!</p>
+<h1 id='installing-sdk'>Installing SDK</h1><h2 id='sdk-requirements'>SDK requirements:</h2>
+<ol>
+<li>Uploading the app in <a href="https://sibche.com/developer">Sibche Developer Dashboard</a></li>
+<li>Receiving app key from Dashboard</li>
+<li>Latest version of Xcode</li>
+</ol>
+<h2 id='installing-sdk-2'>Installing SDK</h2><h3 id='installation-using-cocoapods'>Installation using Cocoapods:</h3>
+<p>You only need to input the following code into your podfile: </p>
+<pre class="highlight ruby tab-ruby"><code><span class="n">pod</span> <span class="s1">'SibcheStoreKit'</span><span class="p">,</span> <span class="s1">'~&gt; 4.1'</span>
+</code></pre>
+<blockquote>
+<p>Then install the added pad</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>pod repo update
+pod install
+</code></pre><h3 id='manual-installation'>Manual Installation:</h3>
+<p>You can download the Sibche SDK from <a href="https://github.com/sibche/SibcheStoreKit/releases/latest/download/SibcheStoreKit.zip">here</a> and add it to your project. For that you need to extract the downloaded file and copy SibcheStoreKit.framework into your project folder and add it to your project as such:</p>
+
+<p><a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc1.jpg"/>
+</a></p>
+
+<p>Then you need to select a plugin file and click on “add”. After that, as displayed below, delete SibcheStoreKit.framework from Linked Frameworks and Libraries in the “General” tab:</p>
+
+<p><a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc2.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc2.jpg"/>
+</a></p>
+
+<p>Then click on the + button in Embedded Binaries tab and select SibcheStoreKit.framework and click “add” as displayed below:</p>
+
+<p><a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc3.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc3.jpg"/>
+</a></p>
+
+<p><a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc4.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc4.jpg"/>
+</a></p>
+
+<p><a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc5.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc5.jpg"/>
+</a></p>
+<h2 id='default-settings'>Default settings:</h2><h3 id='adding-your-apps-exclusive-scheme'>Adding your apps exclusive Scheme</h3>
+<aside class="success">
+If your app already has an exclusive Scheme skip this step.
+</aside>
+
+<p>In order to add exclusive Scheme, you need to open the settings in Xcode and go to “info” tab as such:</p>
+
+<p><a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc10.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc10.jpg"/>
+</a></p>
+
+<p><a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc11.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc11.jpg"/>
+</a></p>
+
+<p>Then, like so, add your app’s URL in the field:</p>
+
+<p><a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc12.jpg">
+    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc12.jpg"/>
+</a></p>
+
+<p>Chose a name and put it in the testapp field, this name will be the name of your Scheme. For example, the Scheme name of <strong>Telegram</strong> is set to <code>tg</code> and for <strong>Instagram</strong>, it is set to <code>Instagram</code>. You can view a list of popular apps <a href="https://ios.gadgethacks.com/news/always-updated-list-ios-app-url-scheme-names-0184033/">here</a>.</p>
+
+<aside class="warning">
+It is strongly recommended for you to use scheme exclusive to your app with a lot of characters. Be mindful that if your scheme interferes with other apps on the list, you will face problems during payment procedures.
+</aside>
+<h3 id='how-to-add-the-developer-kit-to-appdelegate'>How to add the developer kit to AppDelegate:</h3>
+<p>First, add the developer kit activation code into the following function:</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="cp">#import "AppDelegate.h"
+#import &lt;SibcheStoreKit/SibcheStoreKit.h&gt;
+</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">initWithApiKey</span><span class="p">:</span><span class="n">YOUR_API_KEY</span> <span class="nf">withScheme</span><span class="p">:</span><span class="n">YOUR_SCHEME</span><span class="p">];</span>
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kd">import</span> <span class="kt">SibcheStoreKit</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="nf">initWithApiKey</span><span class="p">(</span><span class="kt">YOUR_API_KEY</span><span class="p">,</span> <span class="nv">withScheme</span><span class="p">:</span> <span class="kt">YOUR_SCHEME</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+
+<p>It is noteworthy that you should insert the program key obtained from the Sibche developer panel in the place of <code>YOUR_API_KEY</code>. Also, the word scheme, which was added in the previous stage, must be placed instead of <code>YOUR_SCHEME</code>.</p>
+
+<p><br/>
+<br/></p>
+
+<p>Then, give the developer kit the permission to open urls:</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">app</span> <span class="nf">openURL</span><span class="p">:(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nv">url</span> <span class="nf">options</span><span class="p">:(</span><span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">UIApplicationOpenURLOptionsKey</span><span class="p">,</span><span class="n">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">options</span><span class="p">{</span>
+    <span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">openUrl</span><span class="p">:</span><span class="n">url</span> <span class="nf">options</span><span class="p">:</span><span class="n">options</span><span class="p">];</span>
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="kd">open</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">OpenURLOptionsKey</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="n">options</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre><h2 id='available-classes-of-use-for-the-developer-kit'>Available classes of use for the developer kit:</h2>
+<p>In order to buy, activate and use Sibche packages, the following classes have been created. Some explanations regarding each of them will be presented in the following:</p>
+
+<ul>
+<li><p><code>SibchePackage</code>:
+this class represents the purchasable package which was defined in the developer panel. </p></li>
+<li><p><code>SibchePurchasePackage</code>:
+this class represents the corresponding purchase of a user which has been assigned to a SibchePackage. This class consists of the purchase information, time of purchase, expiry date etc.</p></li>
+<li><p><code>SibcheError</code>:
+this class will be referred to you should an error occur and will provide more information regarding the occurred error(s).</p></li>
+</ul>
+<h3 id='sibchepackage'>SibchePackage</h3>
+<p>There are three types of package available:</p>
+
+<ul>
+<li><p><code>SibcheConsumablePackage</code>:
+consumable packages which can be used in games or programs, like a 500 gold coin package or in program currency. These packages will remain active and valid until they are consumed and one can repurchase them once they run out.</p></li>
+<li><p><code>SibcheNonConsumablePackage</code>:
+these packages cannot be gradually used and can only be purchased once, like packages which unlock the ability to upload an avatar or change your username. These packages can only be bought once and will remain in the user’s account forever.</p></li>
+<li><p><code>SibcheSubscriptionPackage</code>:
+packages which have a limited time of use. After the time runs out, the user can no longer make use of them. For example, packages which grant the use of special options for only one year.</p></li>
+</ul>
+
+<p>All of these packages fall under the umbrella package, SibchePackage and include the following functions:</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">packageId</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">type</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">code</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">name</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">packageDescription</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSNumber</span><span class="o">*</span><span class="p">)</span><span class="n">price</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSNumber</span><span class="o">*</span><span class="p">)</span><span class="n">totalPrice</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSNumber</span><span class="o">*</span><span class="p">)</span><span class="n">discount</span><span class="p">;</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="k">var</span> <span class="nv">packageId</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">code</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">packageDescription</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">price</span><span class="p">:</span> <span class="kt">NSNumber</span>
+<span class="k">var</span> <span class="nv">totalPrice</span><span class="p">:</span> <span class="kt">NSNumber</span>
+<span class="k">var</span> <span class="nv">discount</span><span class="p">:</span> <span class="kt">NSNumber</span>
+</code></pre>
+<p><br/>
+<br/>
+<br/></p>
+
+<p>also, the SibcheSubscriptionPackage includes the following additional functions:</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSNumber</span><span class="o">*</span><span class="p">)</span><span class="n">duration</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">group</span><span class="p">;</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="k">var</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">group</span><span class="p">:</span> <span class="kt">String</span>
+</code></pre><h3 id='sibchepurchasepackage'>SibchePurchasePackage</h3>
+<p>This package includes the user’s purchases corresponding with your packages. This class includes the following functions:</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">purchasePackageId</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">type</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">code</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSDate</span><span class="o">*</span><span class="p">)</span><span class="n">expireAt</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">NSDate</span><span class="o">*</span><span class="p">)</span><span class="n">createdAt</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">SibchePackage</span><span class="o">*</span><span class="p">)</span><span class="n">package</span><span class="p">;</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="k">var</span> <span class="nv">purchasePackageId</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">code</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">expireAt</span><span class="p">:</span> <span class="kt">NSDate</span>
+<span class="k">var</span> <span class="nv">createdAt</span><span class="p">:</span> <span class="kt">NSDate</span>
+<span class="k">var</span> <span class="nv">package</span><span class="p">:</span> <span class="kt">SibchePackage</span>
+</code></pre>
+<p><br/>
+<br/>
+<br/></p>
+<h3 id='sibcheerror'>SibcheError</h3>
+<p>You will be provided with this class should an error with the following characteristics occur:
+-   ErrorCode: the error code number can be observed in the following table.
+-   Message: the error message which will be received from the server.
+-   StatusCode: the http error code which the server provides in response to our request.</p>
+
+<table><thead>
+<tr>
+<th>ErrorCode number</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1000</td>
+<td>Unknown reason</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>This package has be already purchased</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>User has quit the process</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Login error</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Program has not initiated properly</td>
+</tr>
+</tbody></table>
+<pre class="highlight objective_c tab-objective_c"><code><span class="k">@property</span> <span class="n">NSNumber</span><span class="o">*</span> <span class="n">errorCode</span><span class="p">;</span>
+<span class="k">@property</span> <span class="n">NSString</span><span class="o">*</span> <span class="n">message</span><span class="p">;</span>
+<span class="k">@property</span> <span class="n">NSNumber</span><span class="o">*</span> <span class="n">statusCode</span><span class="p">;</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="k">var</span> <span class="nv">NSNumber</span><span class="p">:</span> <span class="n">errorCode</span>
+<span class="k">var</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">NSNumber</span><span class="p">:</span> <span class="n">statusCode</span>
+</code></pre>
+<p><br/>
+<br/></p>
+<h2 id='how-to-get-the-list-of-available-packages'>How to get the list of available packages:</h2>
+<p>After tuning the options for the program, you can view the available packages. You must simply use the following code in order to receive the function of interest:</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">fetchInAppPurchasePackages</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span><span class="o">*</span> <span class="n">error</span><span class="p">,</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">packagesArray</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Your block code for handling of packages list
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="n">fetch</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">packagesArray</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// Your block code for handling of packages list</span>
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+
+<p>If successful, the developer kit will provide you with the available packages in the form of a parameter. This parameter is an array of the packages which are available for purchase. These packages are of the <code>SibchePackage</code> kind. </p>
+
+<p>In case the request is not successful, a parameter called error, which is of the <code>SibcheError</code> kind, will be sent.</p>
+<h2 id='how-to-get-package-information'>How to get package information:</h2>
+<p>If you have the bundle code or ID of the package, you can obtain its information. The following is how to use this API:</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="c1">// Both package bundle code &amp; package id is acceptable
+</span>
+<span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">fetchInAppPurchasePackage</span><span class="p">:</span><span class="s">@"com.example.testapp"</span> <span class="nf">withPackagesCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span><span class="o">*</span> <span class="n">error</span><span class="p">,</span> <span class="n">SibchePackage</span> <span class="o">*</span><span class="n">package</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// Your block code for handling of packages list
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Both package bundle code &amp; package id is acceptable</span>
+
+<span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="nf">fetch</span><span class="p">(</span><span class="nv">inAppPurchasePackage</span><span class="p">:</span> <span class="s">"com.example.testapp"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">package</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// Your block code for handling of packages list</span>
+<span class="p">}</span>
+</code></pre>
+<p>The initially presented parameter is the very callback that we sent which, after getting checked, was recalled. If successful, the package of interest will be sent to you in the object form of <code>SibchePackage</code>.</p>
+<h2 id='how-to-purchase-a-package'>How to purchase a package:</h2>
+<p>After obtaining the package list, you can use the following code in order to set a purchase request through the developer kit. Next, the kit will, if necessary, log the client in and check up on the payment procedure. Then, it will tell you if the purchase has been successful or not and will provide you with a <code>SibchePurchasePackage</code>.</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="c1">// Both package bundle code &amp; package id is acceptable
+</span>
+<span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">purchasePackage</span><span class="p">:</span><span class="s">@"com.example.testapp"</span> <span class="nf">withCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span><span class="o">*</span> <span class="n">error</span><span class="p">,</span> <span class="n">SibchePurchasePackage</span><span class="o">*</span> <span class="n">purchasePackage</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Your block code for handling of purchase callback
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Both package bundle code &amp; package id is acceptable</span>
+
+<span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="nf">purchasePackage</span><span class="p">(</span><span class="s">"com.example.testapp"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">purchasePackage</span><span class="p">)</span> <span class="k">in</span>
+  <span class="c1">// Your block code for handling of purchase callback</span>
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+<h2 id='how-to-obtain-the-list-of-previous-purchases'>How to obtain the list of previous purchases:</h2>
+<p>You can use the following code to obtain your active (purchased) packages. Just simply call in the developer kit function as in the following code.</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">fetchActiveInAppPurchasePackages</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span><span class="o">*</span> <span class="n">error</span><span class="p">,</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">purchasePackagesArray</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Your block code for handling of packages list
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="n">fetchActive</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">purchasePackagesArray</span><span class="p">)</span> <span class="k">in</span>
+  <span class="c1">// Your block code for handling of packages list</span>
+<span class="p">}</span>
+</code></pre>
+<p>In response, the kit will provide you with information as to whether the request was successful or not, as well as an array of active purchased packages. Take note that this array is of the <code>SibchePurchasePackage</code> kind</p>
+
+<p>Active packages are those which have not yet run out of time or have not been used up completely. The Sibche definition for active packages for each of the package types is as follows:</p>
+
+<ul>
+<li><code>SibcheConsumablePackage</code>: packages which have been purchased but have not yet been consumed.</li>
+<li><code>SibcheNonConsumablePackage</code>: packages which can be bought once and therefore will remain active forever.</li>
+<li><code>SibcheSubscriptionPackage</code>: : packages which still have time until their expiry date.</li>
+</ul>
+<h2 id='using-up-packages-on-the-part-of-the-client'>Using up packages on the part of the client:</h2>
+<aside class="success">
+Note: this method should be used in order for the client to use the package in programs or games. However, if the server is to use or validate them, please refer to the next section. In order to use the consumable packages, you must recall the associated function from the developer kit, similar to the following code:
+</aside>
+<pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">consumePurchasePackage</span><span class="p">:</span><span class="n">purchasePackageData</span><span class="p">.</span><span class="n">purchasePackageId</span> <span class="nf">withCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span><span class="o">*</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// Your block code for handling of package consume
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="nf">consumePurchasePackage</span><span class="p">(</span><span class="n">purchasePackageData</span><span class="o">.</span><span class="n">purchasePackageId</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+  <span class="c1">// Your block code for handling of package consume</span>
+<span class="p">}</span>
+</code></pre>
+<p>In response, after the request status has been checked, the developer kit will recall the requested callback. If it is successful, it means that the package has been used up successfully, but if it is unsuccessful, it means that an error has occurred in the usage procedure.</p>
+<h2 id='using-up-packages-on-the-part-of-the-server'>Using up packages on the part of the server:</h2>
+<p>To do this, you must have <code>purchasePackageId</code> which is part of the <code>SibchePurchasePackage</code> class. Then, you must make a link similar to the following and receive the verification data from the server <strong>(addresses are case sensitive!)</strong>:</p>
+
+<p><code>https://api.sibche.com/sdk/userInAppPurchasePackages/{purchasePackageId}/verifyConsume</code></p>
+
+<p>Also, the HTTP header must be set onto the <code>App-Key</code> for this operation. This key is available for any specific program through the developer panel. This key is called the <strong>server key</strong> and has 30 characters.</p>
+
+<p>A sample of code which can be recalled for curl can be as follows:</p>
+<pre class="highlight shell tab-shell"><code>curl --header <span class="s2">"App-Key: YOUR_SERVER_KEY"</span> -X POST <span class="se">\</span>
+<span class="s1">'https://api.sibche.com/sdk/userInAppPurchasePackages/1/verifyConsume'</span>
+</code></pre>
+<p><br/>
+<br/></p>
+
+<p>In response, the server will provide one of these <strong>HTTP Response Codes</strong>:
+-   HTTP Status Code 404 (Not Found): 
+this occurs either when you misspell the address link or package, or if the package has already been used. In this case the server will respond with something like this code:</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"your package is already is used or not found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><br/>
+<br/></p>
+
+<ul>
+<li>  HTTP Status Code 401 (Unauthorized): 
+this means that the server key which has been set on the app-key is invalid or wrong. In this case, the server will provide a similar response to the following:</li>
+</ul>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"app-key is not valid"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><br/>
+<br/></p>
+
+<ul>
+<li>  HTTP Status Code 202 (Accepted / OK): 
+this means that the package has been successfully consumed and the purchase is valid. In this case, the server will return no written message in its response.</li>
+</ul>
+<h2 id='client-login-request-to-the-sibche-developer-kit'>Client login request to the Sibche developer kit:</h2>
+<aside class="warning">
+Note: I recommend that you don’t use this section manually because if the client has not logged in during the payment process, the Sibche library will automatically attempt to do so.
+</aside>
+
+<p>By using this code, you can send a login request to the Sibche library. All you need to do is, as it is done below, recall the function relating to the developer kit.</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">loginUser</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isLoginSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span><span class="o">*</span> <span class="n">error</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userName</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Your code for handling of login result
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="n">loginUser</span> <span class="p">{</span> <span class="p">(</span><span class="n">isLogginSuccessful</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">userName</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// Your code for handling of login result</span>
+<span class="p">}</span>
+</code></pre>
+<p><br/></p>
+
+<p>In response, the developer kit will provide information regarding the successfulness of the login and the errors it faced in the process.</p>
+<h2 id='how-to-logout-of-the-sibche-developer-kit'>How to logout of the Sibche developer kit:</h2>
+<aside class="warning">
+Note: I highly recommend that you only use this function when the client has requested the retrieval of their purchase and has their retrieval request in hand.
+</aside>
+
+<p>By the use of this code, you can logout the client who is already logged in to the developer kit and delete their session information. This function will provide a response to you in the form of a callback.</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">logoutUser</span><span class="p">:</span><span class="o">^</span><span class="p">{</span>
+    <span class="c1">// Your code for handling of logout result
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="n">logoutUser</span> <span class="p">{</span>
+    <span class="c1">// Your code for handling of logout result</span>
+<span class="p">}</span>
+</code></pre><h2 id='how-to-obtain-information-on-current-clients'>How to obtain information on current clients:</h2>
+<p>When you need to get the client’s phone number and userID you can use the following function:</p>
+<pre class="highlight objective_c tab-objective_c"><code><span class="p">[</span><span class="n">SibcheStoreKit</span> <span class="nf">getCurrentUserData</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span> <span class="o">*</span><span class="n">error</span><span class="p">,</span> <span class="n">LoginStatusType</span> <span class="n">loginStatus</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userCellphoneNumber</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Your code for handling of get current user data result
+</span><span class="p">}];</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="kt">SibcheStoreKit</span><span class="o">.</span><span class="n">getCurrentUserData</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">loginStatus</span><span class="p">,</span> <span class="n">userCellphoneNumber</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// Your code for handling of get current user data result</span>
+<span class="p">}</span>
+</code></pre>
+<p><br/>
+<br/></p>
+
+<p>In response, the developer kit will tell you if the process was successful or not and also recalls the error that may have occurred. In most cases the process will go smoothly, but in some rare cases, the following reasons could be why the process wasn’t successful:</p>
+
+<ul>
+<li>  Connectivity issues</li>
+<li>  Network issues</li>
+<li>  Sibche server is not accessible</li>
+</ul>
+
+<p>In addition, a third parameter exists which tells you whether the client is logged in or not. if the client is logged in, the response type will be of this kind <code>loginStatusTypeIsLoggedIn</code>. If they are not logged in, the response type will be of the <code>loginStatusTypeIsLoggedOut</code> kind. If the process is not successful and we are not sure whether the client is logged in or not, we will get a response which is of the <code>loginStatusTypeHaveTokenButFailedToCheck</code> kind. The next parameters in the received response will include the client’s phone number and ID.</p>
+<h1 id='installing-unity-sdk'>Installing Unity SDK</h1><h2 id='unity-developer-kit-installment-requirements'>Unity developer kit installment requirements:</h2>
+<ol>
+<li>Uploading the app in <a href="https://sibche.com/developer">Sibche Developer Dashboard</a></li>
+<li> Receive the program key from the developer panel</li>
+<li> Latest version of Xcode</li>
+<li> Unity v2019.1 and above</li>
+</ol>
+<h2 id='how-to-install-the-unity-developer-kit'>How to install the unity developer kit:</h2>
+<p>You can download the Sibche developer kit specific to unity from <a href="https://github.com/sibche/SibcheStoreKit-Unity/releases/latest/download/SibcheStoreKit.unitypackage">this link</a> and add it to your project.</p>
+<h2 id='basic-settings-unity'>Basic settings (unity):</h2>
+<p>The required settings for a project are automatically added in the project under the editor section. <code>SibcheBuildPostProcessor.cs</code> is the file name.</p>
+
+<p>This file includes two setting sections: one is meant for the addition of the specific scheme or url of your game and the other is meant for the addition of the project file to the project in a dynamic fashion. Both cases will be explained in detail. </p>
+<h3 id='adding-your-program-s-specific-scheme'>Adding your program’s specific scheme:</h3>
+<p>If your program has a specific scheme or url you must turn this setting off from the <code>SibcheBuildPostProcessor.cs</code> section. Just like the below mentioned code, you can set your specific url onto the project.
+<code>csharp
+AddCustomUrlScheme(path, &quot;testapp&quot;, &quot;test&quot;);
+</code></p>
+
+<p>Instead of test, set your preferred name and instead of testapp, place your preferred scheme. For instance, the schemes which are set for <strong>Telegram</strong> and <strong>Instagram</strong> are <code>tg</code> and <code>Instagram</code>, respectively. A full list of popular schemes can be found <a href="https://ios.gadgethacks.com/news/always-updated-list-ios-app-url-scheme-names-0184033/">here</a>.</p>
+
+<p>I highly recommend that you use a scheme that is specific to you and is preferably long. Take caution that if your scheme interferes with another program you may encounter issues regarding payment.</p>
+<h3 id='how-to-add-a-framework-file-to-the-dynamic-library-embedded-framework'>How to add a .framework file to the dynamic library (embedded framework):</h3>
+<p>This section has done all that is needed to be done in regards to making the project dynamic and all that you need to do is leave it as it is:</p>
+<pre class="highlight csharp tab-csharp"><code><span class="nf">AddSibcheFrameworkAsEmbed</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+</code></pre><h3 id='adding-initial-init-sibche-library'>Adding initial init Sibche library:</h3>
+<p>At the beginning of the main class (start function), you must recall the init Sibche library function in order to use it in the following stages.</p>
+<pre class="highlight csharp tab-csharp"><code><span class="k">using</span> <span class="nn">SibcheStoreKit</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">GameController</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//Other initiation tasks</span>
+
+        <span class="c1">// Sibche StoreKit initiation</span>
+        <span class="n">Sibche</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">(</span><span class="n">YOUR_API_KEY</span><span class="p">,</span> <span class="n">YOUR_SCHEME</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre>
+<p>Instead of <code>YOUR_API_KEY</code>, you must enter the api key which you received from the Sibche developer panel. Also, instead of <code>YOUR_SCHEME</code>, you must enter the scheme which was defined in the previous stages.</p>
+<h2 id='classes-of-use-in-the-developer-kit-unity'>Classes of use in the developer kit (unity):</h2>
+<p>In order to buy, activate and use the Sibche packages, the following classes have been created. Some explanations regarding each class are presented as follows:</p>
+
+<ul>
+<li><p><code>SibchePackage</code>: this class is the representation of the purchasable package which was defined in the developer panel. </p></li>
+<li><p><code>SibchePurchasePackage</code>: : this class is the representation of a corresponding purchase of a user which has been assigned to a SibchePackage. This class consists of the purchase information, time of purchase, expiry date etc</p></li>
+<li><p><code>SibcheError</code>: : this class will be referred to you should an error occur and will provide more information regarding the occurred error(s)</p></li>
+</ul>
+<h3 id='sibchepackage'>SibchePackage</h3>
+<p>There are three types of package available:</p>
+
+<ul>
+<li><p><code>SibcheConsumablePackage</code>:
+consumable packages which can be used in games or programs, like a 500 gold coin package or in program currency. These packages will remain active and valid until they are consumed and one can repurchase them once they run out.</p></li>
+<li><p><code>SibcheNonConsumablePackage</code>:
+: these packages cannot be gradually used and can only be purchased once, like packages which unlock the ability to upload an avatar or change your username. These packages can only be bought once and will remain in the user’s account forever.</p></li>
+<li><p><code>SibcheSubscriptionPackage</code>:
+packages which have a limited time of use. After the time runs out, the user can no longer make use of them. For example, packages which grant the use of special options for only one year.</p></li>
+</ul>
+
+<p>All of these packages fall under the umbrella package, <code>SibchePackage</code> and include the following characteristics:</p>
+<pre class="highlight csharp tab-csharp"><code><span class="k">public</span> <span class="kt">string</span> <span class="n">packageId</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">type</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">code</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">packageDescription</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">int</span> <span class="n">price</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">int</span> <span class="n">totalPrice</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">int</span> <span class="n">discount</span><span class="p">;</span>
+</code></pre>
+<p>also, the <code>SibcheSubscriptionPackage</code> includes the following additional characteristics:</p>
+<pre class="highlight csharp tab-csharp"><code><span class="k">public</span> <span class="kt">int</span> <span class="n">duration</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="k">group</span><span class="p">;</span>
+</code></pre><h3 id='sibchepurchasepackage'>SibchePurchasePackage</h3>
+<p>This package includes the user’s purchases corresponding with your packages. This class includes the following characteristics:</p>
+<pre class="highlight csharp tab-csharp"><code><span class="k">public</span> <span class="kt">string</span> <span class="n">purchasePackageId</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">type</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">code</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">DateTime</span> <span class="n">expireAt</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">DateTime</span> <span class="n">createdAt</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">SibchePackage</span> <span class="n">package</span><span class="p">;</span>
+</code></pre><h3 id='sibcheerror'>SibcheError</h3>
+<p>You will be provided with this class should an error with the following characteristics occur:</p>
+<pre class="highlight csharp tab-csharp"><code><span class="k">public</span> <span class="kt">string</span> <span class="n">message</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">int</span> <span class="n">errorCode</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">int</span> <span class="n">statusCode</span><span class="p">;</span>
+</code></pre>
+<ul>
+<li>ErrorCode: the error code number can be observed in the following table.</li>
+<li>  Message: the error message which will be received from the server.</li>
+<li>StatusCode: the http error code which the server provides in response to our request.</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>ErrorCode number</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1000</td>
+<td>Unknown reason</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>This package has be already purchased</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>User has quit the process</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>Login error</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>Program has not initiated properly</td>
+</tr>
+</tbody></table>
+<h2 id='how-to-get-the-list-of-available-packages-unity'>How to get the list of available packages (unity):</h2>
+<p>After tuning the options for the program, you can view the available packages. You must simply use the following code in order to receive the function of interest:</p>
+<pre class="highlight csharp tab-csharp"><code><span class="n">Sibche</span><span class="p">.</span><span class="nf">FetchPackages</span><span class="p">((</span><span class="kt">bool</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span> <span class="n">error</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">SibchePackage</span><span class="p">&gt;</span> <span class="n">packages</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Success block</span>
+    <span class="p">}</span> <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// failure block</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+<p>If successful, the developer kit will provide you with the available packages in the form of a parameter. This parameter is an array of the packages which are available for purchase. These packages are of the <code>SibchePackage</code> kind.</p>
+
+<p>In case the request is not successful, a parameter called error, which is of the <code>SibcheError</code> kind, will be sent. If such is not the case, null will be sent.</p>
+<h2 id='how-to-get-package-information-unity'>How to get package information (unity):</h2>
+<p>If you have the bundle code or ID of the package, you can obtain its information. The following is how to use this API:</p>
+<pre class="highlight csharp tab-csharp"><code><span class="c1">// Both package bundle code &amp; package id is acceptable</span>
+<span class="n">Sibche</span><span class="p">.</span><span class="nf">FetchPackage</span><span class="p">(</span><span class="n">packageId</span><span class="p">,</span> <span class="p">(</span><span class="kt">bool</span> <span class="n">isSuccessful1</span><span class="p">,</span> <span class="n">SibcheError</span> <span class="n">error</span><span class="p">,</span> <span class="n">SibchePackage</span> <span class="n">package</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Success block</span>
+    <span class="p">}</span> <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// failure block</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+<p>The initially presented parameter is the very callback that we sent which, after getting checked, was recalled. If successful, the package of interest will be sent to you in the object form of <code>SibchePackage</code>.</p>
+<h2 id='how-to-purchase-a-package-unity'>How to purchase a package (unity):</h2>
+<p>After obtaining the package list, you can use the following code in order to set a purchase request through the developer kit. Next, the kit will, if necessary, log the client in and check up on the payment procedure. Then, it will tell you if the purchase has been successful or not and will provide you with a <code>SibchePurchasePackage</code>.</p>
+<pre class="highlight csharp tab-csharp"><code><span class="n">Sibche</span><span class="p">.</span><span class="nf">Purchase</span><span class="p">(</span><span class="n">packageCode</span><span class="p">,</span> <span class="p">(</span><span class="kt">bool</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span> <span class="n">error</span><span class="p">,</span> <span class="n">SibchePurchasePackage</span> <span class="n">purchasedPackage</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Success block</span>
+    <span class="p">}</span> <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// failure block</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre><h2 id='how-to-obtain-the-list-of-previous-purchases-unity'>How to obtain the list of previous purchases (unity):</h2>
+<p>You can use the following code to obtain your active (purchased) packages. Just simply call in the developer kit function as in the following code.</p>
+<pre class="highlight csharp tab-csharp"><code><span class="n">Sibche</span><span class="p">.</span><span class="nf">FetchActivePackages</span><span class="p">((</span><span class="kt">bool</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span> <span class="n">error</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">SibchePurchasePackage</span><span class="p">&gt;</span> <span class="n">purchasedPackages</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Success block</span>
+    <span class="p">}</span> <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// failure block</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+<p>In response, the kit will provide you with information as to whether the request was successful or not, as well as an array of active purchased packages. Take note that this array is of the <code>SibchePurchasePackage</code> kind.</p>
+
+<p>Active packages are those which have not yet run out of time or have not been used up completely. The Sibche definition for active packages for each of the package types is as follows:</p>
+
+<ul>
+<li><code>SibcheConsumablePackage</code>: packages which have been purchased but have not yet been consumed.</li>
+<li><code>SibcheNonConsumablePackage</code>: packages which can be bought once and therefore will remain active forever.</li>
+<li><code>SibcheSubscriptionPackage</code>: packages which still have time until their expiry date.</li>
+</ul>
+<h2 id='using-up-packages-on-the-part-of-the-client-unity'>Using up packages on the part of the client (unity):</h2>
+<p>Note: this method should be used in order for the client to use the package in programs or games. However, if the server is to use or validate them, please refer to the next section. In order to use the consumable packages, you must recall the associated function from the developer kit, similar to the following code:</p>
+<pre class="highlight csharp tab-csharp"><code><span class="n">Sibche</span><span class="p">.</span><span class="nf">Consume</span><span class="p">(</span><span class="n">purchasedPackage</span><span class="p">.</span><span class="n">purchasePackageId</span><span class="p">,</span> <span class="p">(</span><span class="kt">bool</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span> <span class="n">error</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isSuccessful</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Success block</span>
+    <span class="p">}</span> <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// failure block</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+<p>In response, after the request status has been checked, the developer kit will recall the requested callback. If it is successful, it means that the package has been used up successfully, but if it is unsuccessful, it means that an error has occurred in the usage procedure.</p>
+<h2 id='using-up-packages-on-the-part-of-the-server-unity'>Using up packages on the part of the server (unity):</h2>
+<p>To do this, you must have <code>purchasePackageId</code> which is part of the <code>SibchePurchasePackage</code> class. Then, you must make a link similar to the following and receive the verification data from the server <strong>(addresses are case sensitive!)</strong>:</p>
+
+<p><code>https://api.sibche.com/sdk/userInAppPurchasePackages/{purchasePackageId}/verifyConsume</code></p>
+
+<p>Also, the HTTP header must be set onto the <code>App-Key</code> for this operation. This key is available for any specific program through the developer panel. This key is called the <strong>server key</strong> and has 30 characters.</p>
+
+<p>A sample of code which can be recalled for curl can be as follows:</p>
+<pre class="highlight shell tab-shell"><code>curl --header <span class="s2">"App-Key: YOUR_SERVER_KEY"</span> -X POST <span class="se">\</span>
+<span class="s1">'https://api.sibche.com/sdk/userInAppPurchasePackages/1/verifyConsume'</span>
+</code></pre>
+<p>In response, the server will provide one of these <strong>HTTP Response Codes</strong>:</p>
+
+<ul>
+<li>•   HTTP Status Code 404 (Not Found): 
+this occurs either when you misspell the address link or package, or if the package has already been used. In this case the server will respond with something like this code:</li>
+</ul>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"your package is already is used or not found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>•   HTTP Status Code 401 (Unauthorized): 
+this means that the server key which has been set on the app-key is invalid or wrong. In this case, the server will provide a similar response to the following:</li>
+</ul>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"app-key is not valid"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ul>
+<li>•   HTTP Status Code 202 (Accepted / OK):
+this means that the package has been successfully consumed and the purchase is valid. In this case, the server will return no written message in its response</li>
+</ul>
+<h2 id='client-login-request-to-the-sibche-developer-kit-unity'>Client login request to the Sibche developer kit (unity):</h2>
+<p>Note: I recommend that you don’t use this section manually because if the client has not logged in during the payment process, the Sibche library will automatically attempt to do so.</p>
+
+<p>By using this code, you can send a login request to the Sibche library. All you need to do is, as it is done below, recall the function relating to the developer kit.</p>
+<pre class="highlight csharp tab-csharp"><code><span class="n">Sibche</span><span class="p">.</span><span class="nf">Login</span><span class="p">((</span><span class="kt">bool</span> <span class="n">isLoginSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span> <span class="n">error</span><span class="p">,</span> <span class="kt">string</span> <span class="n">userName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">userId</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// Login handle block</span>
+<span class="p">});</span>
+</code></pre>
+<p>In response, the developer kit will provide information regarding the successfulness of the login and the errors it faced in the process.</p>
+<h2 id='how-to-logout-of-the-sibche-developer-kit-unity'>How to logout of the Sibche developer kit (unity):</h2>
+<p>Note: I highly recommend that you only use this function when the client has requested the retrieval of their purchase and has their retrieval request in hand.</p>
+<pre class="highlight csharp tab-csharp"><code><span class="n">Sibche</span><span class="p">.</span><span class="nf">Logout</span><span class="p">(()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// Logout handle block</span>
+<span class="p">});</span>
+</code></pre>
+<p>By the use of this code, you can logout the client who is already logged in to the developer kit and delete their session information. This function will provide a response to you in the form of a callback.</p>
+<h2 id='how-to-obtain-information-on-current-clients-unity'>How to obtain information on current clients (unity):</h2>
+<p>When you need to get the client’s phone number and userID you can use the following function:</p>
+<pre class="highlight csharp tab-csharp"><code><span class="n">Sibche</span><span class="p">.</span><span class="nf">GetCurrentUserData</span><span class="p">((</span><span class="kt">bool</span> <span class="n">isSuccessful</span><span class="p">,</span> <span class="n">SibcheError</span> <span class="n">error</span><span class="p">,</span> <span class="n">LoginStatusType</span> <span class="n">loginStatus</span><span class="p">,</span> <span class="kt">string</span> <span class="n">userCellphoneNumber</span><span class="p">,</span> <span class="kt">string</span> <span class="n">userId</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// GetCurrentUserData handle block</span>
+<span class="p">});</span>
+</code></pre>
+<p>In response, the developer kit will tell you if the process was successful or not and also recalls the error that may have occurred. In most cases the process will go smoothly, but in some rare cases, the following reasons could be why the process wasn’t successful:</p>
+
+<ul>
+<li>Connectivity issues</li>
+<li>  Network issues</li>
+<li>Sibche server is not accessible</li>
+</ul>
+
+<p>In addition, a third parameter exists which tells you whether the client is logged in or not. if the client is logged in, the response type will be of this kind <code>loginStatusTypeIsLoggedIn</code>. If they are not logged in, the response type will be of the <code>loginStatusTypeIsLoggedOut</code> kind. If the process is not successful and we are not sure whether the client is logged in or not, we will get a response which is of the <code>loginStatusTypeHaveTokenButFailedToCheck</code> kind. The next parameters in the received response will include the client’s phone number and ID.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="swift">Swift</a>
+                <a href="#" data-language-name="objective_c">Objective-C</a>
+                <a href="#" data-language-name="csharp">C#</a>
+                <a href="#" data-language-name="lua">Lua</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
