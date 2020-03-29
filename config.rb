@@ -38,6 +38,8 @@ end
 activate :relative_assets
 set :relative_links, true
 
+page "/fa/*", :layout => "layoutRTL"
+
 # Build Configuration
 configure :build do
   activate :asset_hash
