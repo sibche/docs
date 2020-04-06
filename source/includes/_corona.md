@@ -5,52 +5,34 @@
 1. بارگذاری برنامه در [پنل توسعه‌دهندگان سیبچه](https://sibche.com/developer)
 2. دریافت کلید برنامه از پنل توسعه‌دهندگان
 3. آخرین نسخه‌ی Xcode
-4. داشتن آخرین نسخه از کرونا
+4. داشتن آخرین نسخه از کرونا (نسخه‌ی بالاتر از 2020.3577)
 
 ## نصب پلاگین کرونا
 
-### اضافه کردن پلاگین سیبچه به صورت دستی به پروژه کرونا
+### اضافه کردن پلاگین سیبچه به پروژه کرونا
 
-ابتدا [این فایل](https://github.com/sibche/SibcheStoreKit-Corona/releases/latest/download/SibcheStoreKit.zip) را دانلود کرده و از حال زیپ در بیاورید و داخل پوشه پروژه Xcode تان اضافه نمایید.
+<aside class="success">
+توجه نمایید که به دلیل محدودیت‌های کرونا، پلاگین پروژه را بایستی به صورت self-hosted نصب نمایید و چون این قابلیت در آخرین نسخه‌های حال حاضر کرونا منتشر شده، به همین دلیل بایستی نسخه `2020.3577` و یا بالاتر را نصب و استفاده نمایید.
+</aside>
 
+```lua
+	plugins =
+    {
+        ["plugin.SibcheStoreKit"] =
+        {
+            publisherId = "com.sibche",
+            supportedPlatforms = { 
+                iphone = { url="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/iphone.tgz" },
+                ["iphone-sim"] = { url="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/iphone-sim.tgz" },
+                android = false,
+                macos = false,
+                win32 = false
+            },
+        },
+    },
+```
+برای نصب پلاگین سیبچه بایستی کد روبرو را داخل فایل `build.settings` وارد نموده و سپس گزینه نصب پلاگین‌ها (`Download Plugins`) را از منوی Xcode نصب نمایید.
 
-سپس همانند تصاویر زیر، این فایل را به پروژه Xcode خود اضافه نمایید:
-
-<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc1.png">
-    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc1.png"/>
-</a>
-
-<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc2.png">
-    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc2.png"/>
-</a>
-
-## اضافه کردن کیت توسعه‌دهندگان سیبچه به پروژه کرونا
-
-به دلیل اینکه کیت توسعه‌دهندگان سیبچه به صورت پویا (دینامیک) کار می‌کند، بایستی فایل `SibcheStoreKit.framework` را به صورت دستی به پروژه اضافه نماییم. در این مرحله همانند تصاویر زیر، این فایل را که داخل پوشه `EmbeddedFrameworks` از پوشه دانلود شده قرار دارد، همانند تصاویر زیر به پروژه اضافه می‌کنیم:
-
-<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc3.png">
-    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc3.png"/>
-</a>
-
-<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc4.png">
-    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc4.png"/>
-</a>
-
-سپس فایل پلاگین را انتخاب نموده و گزینه `add` را بزنید. سپس همانند شکل زیر، از بخش `General` از داخل تنظیمات پروژه، SibcheStoreKit.framework را از قسمت `Linked Frameworks and Libraries` حذف نمایید:
-
-<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc5.png">
-    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc5.png"/>
-</a>
-
-سپس دکمه + از بخش `Embedded Binaries` را انتخاب نموده و `SibcheStoreKit.framework` را انتخاب نموده و دکمه `Add` را بزنید. همانند عکسهای زیر:
-
-<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc6.png">
-    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc6.png"/>
-</a>
-
-<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc7.png">
-    <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Screenshots/Sc7.png"/>
-</a>
 
 ## تنظیمات اولیه (کرونا)
 
@@ -84,12 +66,6 @@
 توصیه اکید می‌شود از scheme استفاده کنید که مختص شما باشد و ترجیحا طولانی باشد. توجه فرمایید که اگر با برنامه‌های دیگر در تداخل باشد، در فرآیند پرداخت دچار مشکل خواهید شد.
 </aside>
 
-
-### افزودن فایل wrapper پروژه
-
-فایل `wrapper.lua` را از [اینجا](https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Corona/sibche/wrapper.lua) دانلود کرده و سپس داخل فولدری به اسم `sibche` داخل پروژه کرونا اضافه کنید.
-
-این فایل وظیفه ساده‌سازی API های پلاگین سیبچه را بر عهده دارد. همچنین ورودی‌ها و خروجی‌های API ها را به صورت خلاصه داخل این فایل توضیح داده‌ایم.
 
 ### افزودن init اولیه کتابخانه سیبچه
 
