@@ -118,17 +118,15 @@ SibcheStoreKit.init(YOUR_API_KEY, YOUR_SCHEME)
 <br/>
 
 ```lua
--- sibchePackage.packageId (string)
--- sibchePackage.type (string)
--- sibchePackage.code (string)
--- sibchePackage.name (string)
--- sibchePackage.packageDescription (string)
--- sibchePackage.price (int)
--- sibchePackage.totalPrice (int)
--- sibchePackage.discount (int)
+sibchePackage.packageId (string)
+sibchePackage.type (string)
+sibchePackage.code (string)
+sibchePackage.name (string)
+sibchePackage.packageDescription (string)
+sibchePackage.price (int)
+sibchePackage.totalPrice (int)
+sibchePackage.discount (int)
 ```
-
-// TODO Check and fill DateTime types () empty brackets
 
 همه این سه آبجکت از آبجکت والد `SibchePackage` گرفته شده‌اند و به صورت عمومی شامل خصوصیات روبرو هستند.
 
@@ -140,8 +138,8 @@ SibcheStoreKit.init(YOUR_API_KEY, YOUR_SCHEME)
 <br/>
 
 ```lua
--- sibchePackage.duration (int)
--- sibchePackage.group (string)
+sibchePackage.duration (int)
+sibchePackage.group (string)
 ```
 
 علاوه بر این خصوصیات، آبجکت `SibcheSubscriptionPackage` شامل خصوصیات اضافی‌تر روبرو نیز هست:
@@ -150,12 +148,12 @@ SibcheStoreKit.init(YOUR_API_KEY, YOUR_SCHEME)
 ### SibchePurchasePackage
 
 ```lua
--- sibchePurchasePackage.purchasePackageId (string)
--- sibchePurchasePackage.type (string)
--- sibchePurchasePackage.code (string)
--- sibchePurchasePackage.expireAt ()
--- sibchePurchasePackage.createdAt ()
--- sibchePurchasePackage.package (SibchePackage)
+sibchePurchasePackage.purchasePackageId (string)
+sibchePurchasePackage.type (string)
+sibchePurchasePackage.code (string)
+sibchePurchasePackage.expireAt ()
+sibchePurchasePackage.createdAt ()
+sibchePurchasePackage.package (SibchePackage)
 ```
 
 این آبجکت، شامل تناظر خرید کاربر به بسته‌های شما می‌باشد. این آبجکت شامل خصوصیات روبرو است:
@@ -167,9 +165,9 @@ SibcheStoreKit.init(YOUR_API_KEY, YOUR_SCHEME)
 ### SibcheError
 
 ```lua
--- event.errorMessage;
--- event.errorCode;
--- event.errorStatusCode;
+event.errorMessage;
+event.errorCode;
+event.errorStatusCode;
 ```
 
 این آبجکت در مواقع بروز خطا داخل همان پارامترهای callback به شما داده خواهد شد و شامل خصوصیات زیر می‌باشد:

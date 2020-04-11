@@ -4,9 +4,10 @@ title: مستندات سیبچه
 language_tabs: # must be one of https://git.io/vQNgJ
   - swift: Swift
   - objective_c: Objective-C
-  - csharp: C#
-  - lua: Lua
-  - javascript: Javascript
+  # - csharp: C#
+  # - lua: Lua
+  # - javascript: Javascript
+  # - vb: Visual Basic
 
 toc_footers:
   - <a href='/en'>English version</a>
@@ -20,6 +21,7 @@ includes:
   - unity
   - corona
   - reactnative
+  - b4i
 
 search: true
 ---
