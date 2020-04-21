@@ -1,18 +1,18 @@
-# نصب کیت توسعه‌دهندگان کرونا
+#How to install the Corona developer kit
 
-## نیازمندیهای نصب پلاگین کرونا
+##Corona plugin requirements
 
-1. بارگذاری برنامه در [پنل توسعه‌دهندگان سیبچه](https://sibche.com/developer)
-2. دریافت کلید برنامه از پنل توسعه‌دهندگان
-3. آخرین نسخه‌ی Xcode
-4. داشتن آخرین نسخه از کرونا (نسخه‌ی بالاتر از 2020.3577)
+1.  Uploading the app in [Sibche Developer Dashboard](https://sibche.com/developer)
+2.  Receiving app key from Dashboard
+3.  Latest version of Xcode
+4. Latest version of Corona (Above 2020.3577)
 
-## نصب پلاگین کرونا
+##Installing the Corona plugin
 
-### اضافه کردن پلاگین سیبچه به پروژه کرونا
+###Adding the sibche plugin to the corona project
 
 <aside class="success">
-توجه نمایید که به دلیل محدودیت‌های کرونا، پلاگین پروژه را بایستی به صورت self-hosted نصب نمایید و چون این قابلیت در آخرین نسخه‌های حال حاضر کرونا منتشر شده، به همین دلیل بایستی نسخه `2020.3577` و یا بالاتر را نصب و استفاده نمایید.
+Please note that you must install the project plugin "self-hosted" due to Corona's limitations, and since this option is only avaiable in the most recent versions of Corona, you must install and use the version '2020.3577' or above.
 </aside>
 
 ```lua
@@ -31,18 +31,18 @@
         },
     },
 ```
-برای نصب پلاگین سیبچه بایستی کد روبرو را داخل فایل `build.settings` وارد نموده و سپس گزینه نصب پلاگین‌ها (`Download Plugins`) را از منوی Xcode نصب نمایید.
+In order to install Sibche Plugin, you must copy the following code in `build.settings` file and then click on the (`Download Plugins`) from Xcode menu.
+<br/>
 
+##Default settings (corona)
 
-## تنظیمات اولیه (کرونا)
-
-### افزودن Scheme مختص برنامه شما
+### Adding your app’s exclusive Schemeا
 
 <aside class="success">
-اگر برنامه شما دارای scheme اختصاصی می‌باشد این مرحله را رد کنید.
+If your app already has an exclusive Scheme skip this step.
 </aside>
 
-برای اضافه کردن scheme اختصاصی بایستی طبق مراحل زیر تنظیمات برنامه را داخل Xcode باز کرده و سپس به تب info مراجعه نمایید:
+In order to add exclusive Scheme, you need to open the settings in Xcode and go to **info** tab as such:
 
 <a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc10.jpg">
     <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc10.jpg"/>
@@ -52,22 +52,20 @@
     <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc11.jpg"/>
 </a>
 
-سپس همانند شکل، url اختصاصی اپلیکیشن را اضافه نمایید:
+Then, like so, add your app’s URL in the field:
 
 <a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc12.jpg">
     <img src="https://raw.githubusercontent.com/sibche/SibcheStoreKit/master/Screenshots/sc12.jpg"/>
 </a>
 
-به جای test، نام دلخواهی را تنظیم کرده و به جای testapp بایستی scheme مورد نظرتان را وارد نمایید. به عنوان مثال scheme تنظیم شده **تلگرام** `tg` و scheme تنظیم شده برای برنامه **اینستاگرام** `instagram` میباشد. لیست کامل scheme برنامه‌های معروف را میتوانید از
-[اینجا](https://ios.gadgethacks.com/news/always-updated-list-ios-app-url-scheme-names-0184033/)
-مشاهده نمایید.
+Chose a name and put it in the testapp field, this name will be the name of your Scheme. For example, the Scheme name of **Telegram** is set to `tg` and for **Instagram**, it is set to `Instagram`. You can view a list of popular apps [here]([اینجا](https://ios.gadgethacks.com/news/always-updated-list-ios-app-url-scheme-names-0184033/).
 
 <aside class="warning">
-توصیه اکید می‌شود از scheme استفاده کنید که مختص شما باشد و ترجیحا طولانی باشد. توجه فرمایید که اگر با برنامه‌های دیگر در تداخل باشد، در فرآیند پرداخت دچار مشکل خواهید شد.
+It is strongly recommended for you to use scheme exclusive to your app with a lot of characters. Be mindful that if your scheme interferes with other apps on the list, you will face problems during payment procedures.
 </aside>
 
 
-### افزودن init اولیه کتابخانه سیبچه
+###Adding initial init Sibche libraryه
 
 ```lua
 local SibcheStoreKit = require "sibche.wrapper"
@@ -75,62 +73,41 @@ local SibcheStoreKit = require "sibche.wrapper"
 SibcheStoreKit.init(YOUR_API_KEY, YOUR_SCHEME)
 ```
 
-بایستی در ابتدای برنامه، پلاگین سیبچه را وارد کرده و متد `init` را همانند کد روبرو فراخوانی نمایید
+  First you need to enter the sibche plugin and recall the `init` method using the following code
 
 <br/>
 <br/>
 
- به جای `YOUR_API_KEY` بایستی api key دریافت شده از پنل دولوپری سیبچه را وارد نمایید. همچنین به جای `YOUR_SCHEME‍` بایستی scheme تعریف شده از مراحل قبلی را وارد نمایید.
+Instead of `YOUR_API_KEY`, you must enter the api key which you received from the Sibche developer panel. Also, instead of `YOUR_SCHEME`, you must enter the scheme which was defined in the previous stages.
 
-## آبجکت‌های مورد استفاده در پلاگین سیبچه (کرونا)
+##Available objects of use for the sibche plugin (corona):
 
-برای خرید، فعال‌سازی و استفاده از بسته‌های سیبچه، آبجکت (table) های زیر ایجاد شده است که در ادامه در مورد هر کدام توضیحاتی ارائه خواهیم کرد.
+In order to buy, activate and use Sibche packages, the following objects (table) have been created. Some explanations regarding each of them will be presented in the following:
+-	`SibchePackage`: this class represents the purchasable package which was defined in the developer panel.
+-	`SibchePurchasePackage`: this class represents the corresponding purchase of a user which has been assigned to a SibchePackage. This class consists of the purchase information, time of purchase, expiry date etc.
+-	`SibcheError`: this class will be referred to you should an error occur and will provide more information regarding the occurred error(s).
 
-- `SibchePackage`: این آبجکت، نمایانگر بسته قابل خریدی هست که داخل پنل توسعه‌دهندگان اقدام به تعریفشان کرده‌اید. 
-
-- `SibchePurchasePackage`: این آبجکت، نمایانگر خرید متناظری از کاربر هست که به یک بسته SibchePackage اختصاص یافته است. این آبجکت، شامل اطلاعات خرید، زمان خرید، و تاریخ انقضا و ... خواهد بود.
-
-- `SibcheError`:این آبجکت، در مواقع رخداد خطا به شما ارجاع داده خواهد شد که شامل اطلاعات بیشتر از خطاهای رخ داده است. اطلاعاتی از قبیل خطا و Http status code و ...
- 
  
 ### SibchePackage
-سه نوع بسته قابل خرید داریم که عبارتند از:
-
-- 
-  بسته‌های قابل خرید مصرفی یا `SibcheConsumablePackage`:
-   بسته‌هایی که قابل مصرف هستند که خریداری شده و داخل بازی یا برنامه مصرف می‌شود. مانند بسته‌ی ۵۰۰ سکه طلا یا شارژ قابل مصرف داخل برنامه.
-
-این بسته ها تا زمانی که مصرف نشده‌اند، فعال و معتبر می‌باشند و پس از مصرف، قابل خرید مجدد هستند. 
-
-
-- 
-  بسته‌های قابل خرید غیر مصرفی یا `SibcheNonConsumablePackage`:
-  بسته‌هایی که قابل مصرف نیستند و فقط یکبار خریداری می‌شوند. مانند بسته‌ی باز شدن قابلیت آپلود آواتار یا تغییر نام.
-
-این بسته ها، فقط یکبار قابل خرید هستند و پس از خرید، همواره در لیست بسته‌های فعال کاربر خواهند بود.
-
-
-
-- 
-  بسته‌های اشتراک یا `SibcheSubscriptionPackage`:
-  بسته‌هایی هستند که به مدت محدود قابل استفاده بوده و پس از اتمام زمان آنها، کاربر مجاز به استفاده از آن قابلیت نیست. به عنوان مثال، قابلیت استفاده از امکانات ویژه به مدت یک سال
+There are three types of package available:
+- `SibcheConsumablePackage`: consumable packages which can be used in games or programs, like a 500 gold coin package or in program currency. These packages will remain active and valid until they are consumed and one can repurchase them once they run out.
+- `SibcheNonConsumablePackage`: these packages cannot be gradually used and can only be purchased once, like packages which unlock the ability to upload an avatar or change your username. These packages can only be bought once and will remain in the user’s account forever.
+- `SibcheSubscriptionPackage`: packages which have a limited time of use. After the time runs out, the user can no longer make use of them. For example, packages which grant the use of special options for only one year.
 
 <br/>
 
 ```lua
--- sibchePackage.packageId (string)
--- sibchePackage.type (string)
--- sibchePackage.code (string)
--- sibchePackage.name (string)
--- sibchePackage.packageDescription (string)
--- sibchePackage.price (int)
--- sibchePackage.totalPrice (int)
--- sibchePackage.discount (int)
+sibchePackage.packageId (string)
+sibchePackage.type (string)
+sibchePackage.code (string)
+sibchePackage.name (string)
+sibchePackage.packageDescription (string)
+sibchePackage.price (int)
+sibchePackage.totalPrice (int)
+sibchePackage.discount (int)
 ```
 
-// TODO Check and fill DateTime types () empty brackets
-
-همه این سه آبجکت از آبجکت والد `SibchePackage` گرفته شده‌اند و به صورت عمومی شامل خصوصیات روبرو هستند.
+All of these objects fall under the umbrella object, `SibchePackage` and include the following functions:
 
 <br/>
 <br/>
@@ -140,26 +117,25 @@ SibcheStoreKit.init(YOUR_API_KEY, YOUR_SCHEME)
 <br/>
 
 ```lua
--- sibchePackage.duration (int)
--- sibchePackage.group (string)
+sibchePackage.duration (int)
+sibchePackage.group (string)
 ```
 
-علاوه بر این خصوصیات، آبجکت `SibcheSubscriptionPackage` شامل خصوصیات اضافی‌تر روبرو نیز هست:
+also, the `SibcheSubscriptionPackage` object includes the following additional functions:
 
 
 ### SibchePurchasePackage
 
 ```lua
--- sibchePurchasePackage.purchasePackageId (string)
--- sibchePurchasePackage.type (string)
--- sibchePurchasePackage.code (string)
--- sibchePurchasePackage.expireAt ()
--- sibchePurchasePackage.createdAt ()
--- sibchePurchasePackage.package (SibchePackage)
+sibchePurchasePackage.purchasePackageId (string)
+sibchePurchasePackage.type (string)
+sibchePurchasePackage.code (string)
+sibchePurchasePackage.expireAt ()
+sibchePurchasePackage.createdAt ()
+sibchePurchasePackage.package (SibchePackage)
 ```
 
-این آبجکت، شامل تناظر خرید کاربر به بسته‌های شما می‌باشد. این آبجکت شامل خصوصیات روبرو است:
-
+This object includes the user’s purchases corresponding with your packages. This object includes the following functions:
 <br/>
 <br/>
 <br/>
@@ -167,27 +143,27 @@ SibcheStoreKit.init(YOUR_API_KEY, YOUR_SCHEME)
 ### SibcheError
 
 ```lua
--- event.errorMessage;
--- event.errorCode;
--- event.errorStatusCode;
+event.errorMessage;
+event.errorCode;
+event.errorStatusCode;
 ```
 
-این آبجکت در مواقع بروز خطا داخل همان پارامترهای callback به شما داده خواهد شد و شامل خصوصیات زیر می‌باشد:
+This object will be provided to you should an error occur in the same parameter callback and has the following features:
+
+- ErrorCode: the error code number can be observed in the following table.
+- Message: the error message which will be received from the server.
+- StatusCode: the http error code which the server provides in response to our request.
 
 
-- errorCode: همان شماره خطایی هست که مطابق جدول زیر ایجاد شده است.
-- errorMessage: پیغام خطایی هست که از طرف سرور دریافت شده است.
-- errorStatusCode:  همان شماره خطای http هست که سرور در جواب درخواست ما داده است.
-
-| شماره errorCode | دلیل خطای مربوطه                         |
+| ErrorCode number | Reason                        |
 | --------------- | ---------------------------------------- |
-| 1000            | خطای نامشخص                              |
-| 1001            | این بسته قبلا خریداری شده است            |
-| 1002            | کاربر از ادامه عملیات منصرف شد                 |
-| 1003            | در فرایند ورود (لاگین) دچار مشکل شده‌ایم |
-| 1004            |  برنامه به درستی initiate نشده است |
+| 1000            | Unknown reason                            |
+| 1001            | This package has been already purchased            |
+| 1002            | User has quit the process                 |
+| 1003            | Login error |
+| 1004            | Program has not initiated properly |
 
-## گرفتن لیست بسته‌های قابل خرید (کرونا)
+##How to get the list of available packages (corona)
 
 ```lua
 local function fetchInAppPurchasePackagesCallback(event)
@@ -202,26 +178,23 @@ end
 SibcheStoreKit.fetchInAppPurchasePackages(fetchInAppPurchasePackagesCallback)
 ```
 
-پس از تنظیم برنامه، میتوانید بسته‌های قابل خرید را مشاهده نمایید. کافیست همانند کد روبرو اقدام به فراخوانی تابع مورد نظر نمایید:
+After tuning the options for the program, you can view the available packages. You must simply use the following code in order to receive the function of interest:
 
 
 <aside class="success">
-توجه نمایید که inspect استفاده شده، لایبرری ای جهت مشاهده محتویات table میباشد که از 
-<a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Corona/inspect.lua">اینجا
-</a>
-قابل دریافت و استفاده است
+Note: the “inspect” that has been used is actually a library which can be used to observe the cable contents and can be obtained from <a href="https://raw.githubusercontent.com/sibche/SibcheStoreKit-Corona/master/Corona/inspect.lua">here
+                                                                                                                                      </a>.
 </aside>
 
 <br/>
 <br/>
 <br/>
 
-در پاسخ، در صورت موفقیت، پلاگین بسته‌های قابل خرید را به عنوان پارامتر پاسخ به شما تحویل میدهد. این پارامتر آرایه‌ای از بسته‌های قابل خرید می‌باشد. این بسته‌ها از نوع `SibchePackage` هستند. 
+If successful, the developer kit will provide you with the available package plugins in the form of an answer parameter. This parameter is an array of the packages which are available for purchase. These packages are of the `SibchePackage` kind.
 
+In case the request is not successful, parameters called `errormessage`, `errorcode` and `errorstatuscode` will be sent. If such is not the case, null will be sent.
 
-در صورت ناموفق بودن درخواست، پارمترهایی با نام `errorMessage` و `errorCode` و `errorStatusCode` ارسال می‌شود، وگرنه به صورت null داده خواهد شد.
-
-## گرفتن اطلاعات بسته مشخص (کرونا)
+##How to get package information (corona)
 
 ```lua
 local function fetchInAppPurchasePackageCallback(event)
@@ -236,15 +209,14 @@ end
 SibcheStoreKit.fetchInAppPurchasePackage(ِYOUR_PACKAGE_ID_OR_CODE, fetchInAppPurchasePackageCallback)
 ```
 
-با در اختیار داشتن آیدی یا کد باندل بسته مورد نظر می‌توانید اطلاعات آن بسته را در اختیار بگیرید. نحوه استفاده از این API به شکل روبرو است:
+If you have the bundle code or ID of the package, you can obtain its information. The following is how to use this API:
 
 <br/>
 <br/>
 
-پارامتر دوم داده شده، همان callback ارسال شده ما است که پس از مشخص شدن وضعیت درخواست، فراخوانی خواهد شد. در صورت موفقیت، بسته‌ی مورد نظر در قالب آبجکت `SibchePackage` (بسته به نوع بسته) به شما ارسال خواهد شد.
+The parameter presented secondly is the very callback that we sent which, after getting checked, was recalled. If successful, the package of interest will be sent to you in the object form of `SibchePackage`.
 
-
-## خرید بسته مشخص (کرونا)
+##How to purchase a package (corona):
 
 ```lua
 local function purchasePackageCallback(event)
@@ -259,9 +231,8 @@ end
 SibcheStoreKit.purchasePackage(ِYOUR_PACKAGE_ID_OR_CODE, purchasePackageCallback)
 ```
 
-پس از گرفتن لیست بسته‌ها، میتوانید درخواست خرید این بسته‌ها را از طریق کد روبرو به پلاگین بدهید. در ادامه، کیت توسعه‌دهندگان، در صورت نیاز کاربر را لاگین کرده و فرایند پرداخت را پیگیری خواهد کرد. سپس موفق یا ناموفق بودن خرید را به همراه `SibchePurchasePackage` به اطلاع شما خواهد رساند.
-
-## گرفتن لیست بسته های خریداری شده (کرونا)
+After obtaining the package list, you can use the following code in order to set a purchase request to the plugin. Next, the developer kit will, if necessary, log the client in and check up on the payment procedure. Then, it will tell you if the purchase has been successful or not and will provide you with a `SibchePurchasePackage`.
+## How to obtain the list of previous purchases (corona)
 
 ```lua
 local function fetchActiveInAppPurchasePackagesCallback( event )
@@ -271,28 +242,23 @@ end
 SibcheStoreKit.fetchActiveInAppPurchasePackages(fetchActiveInAppPurchasePackagesCallback)
 ```
 
-با استفاده از این دستور، میتوانید لیست بسته‌های فعال (خریداری شده) کاربر را بدست آورید. کافیست همانند کد روبرو، تابع مربوطه کیت توسعه‌دهندگان را فراخوانی نمایید.
-
+You can use the following code to obtain your active (purchased) packages. Just simply call in the developer kit function as in the following code.
 <br/>
 <br/>
 <br/>
 
-در پاسخ، کیت توسعه‌دهندگان موفقیت/عدم موفقیت درخواست و نیز آرایه‌ای از بسته‌های خریداری شده‌ی فعال را برمی‌گرداند. توجه نمایید که این آرایه، آرایه‌ای از نوع `SibchePurchasePackage` است.
+In response, the kit will provide you with information as to whether the request was successful or not, as well as an array of active purchased packages. Take note that this array is of the `SibchePurchasePackage` kind.
 
+Active packages are those which have not yet run out of time or have not been used up completely. The Sibche definition for active packages for each of the package types is as follows:
+- `SibcheConsumablePackage`: packages which have been purchased but have not yet been consumed.
+-	`SibcheNonConsumablePackage`: packages which can be bought once and therefore will remain active forever.
+-	`SibcheSubscriptionPackage`: packages which still have time until their expiry date.
 
-منظور از بسته‌های فعال، بسته‌هایی هستند که خریداری شده‌اند و هنوز مصرف نشده‌اند و یا تاریخ انقضایشان به اتمام نرسیده است.
-تعریف سیبچه از بسته‌های فعال برای هر کدام از نوع بسته‌ها به شرح زیر می‌باشد:
-
-
-- `SibcheConsumablePackage`: بسته‌هایی که خریداری شده‌اند ولی هنوز مصرف (Consume) نشده‌اند.
-- `SibcheNonConsumablePackage`: بسته‌هایی که خریداری شده‌اند. چون این بسته‌ها یکبار خرید هستند، در صورت خرید، به صورت مادام‌العمر فعال هستند.
-- `SibcheSubscriptionPackage`: بسته‌هایی که خریداری شده‌اند ولی هنوز از تاریخ انقضای آنها باقی مانده است.
-
-## مصرف کردن بسته‌ها در سمت کلاینت (کرونا)
+## Using up packages on the part of the client (corona)
 
 
 <aside class="warning">
-در صورتی که بخواهید بسته‌های قابل مصرف را در سمت کلاینت (درون خود بازی/برنامه) مصرف کنید، بایستی از این روش استفاده کنید. ولی اگر قصد مصرف و اعتبارسنجی سمت سرور داشته باشید، به بخش بعدی مراجعه نمایید.
+Note: this method should be used in order for the client to use the package in programs or games. However, if the server is to use or validate them, please refer to the next section.
 </aside>
 
 ```lua
@@ -312,49 +278,42 @@ end
 SibcheStoreKit.purchasePackage(ِYOUR_PACKAGE_ID_OR_CODE, purchasePackageCallback)
 ```
 
-برای مصرف کردن بسته‌های قابل مصرف (Consumable) بایستی شبیه دستور روبرو، تابع مربوطه از پلاگین را فراخوانی کنیم:
-
+In order to use the consumable packages, you must recall the associated function from the developer kit, similar to the following code:
 <br/>
 <br/>
 
 <aside class="success">
-تکه کد روبرو، پس از خرید موفق، اقدام به مصرف بسته می‌کند و صرفا جهت نمایش نحوه استفاده از بسته نوشته شده است و بایستی متناسب کارکرد بازیتان تغییرش بدهید.
+The following piece of code, after a successful purchase, attempts to consume the package and is simply written in order to show how the package is used and must be changed in order to fit your game.
 </aside>
 
 <br/>
 <br/>
 <br/>
 
-در پاسخ پس از مشخص شدن وضعیت درخواست، کیت توسعه‌دهندگان callback داده شده را فراخوانی خواهد کرد.
-در صورت موفقیت، یعنی بسته مورد نظر با موفقیت مصرف شده و در صورت عدم موفقیت، در مصرف بسته مورد نظر، دچار مشکلی شده‌ایم.
+In response, after the request status has been checked, the developer kit will recall the requested callback. If it is successful, it means that the package has been used up successfully, but if it is unsuccessful, it means that an error has occurred in the usage procedure.
 
+## Using up packages on the part of the server(corona):
 
-## مصرف کردن بسته‌ها در سمت سرور (یونیتی)
-
-برای این کار بایستی، کد `purchasePackageId` که بخشی از کلاس `SibchePurchasePackage` می‌باشد را در دست داشته باشید. سپس لینکی به شکل زیر درست کنید و دیتای وریفای را از سرور بگیرید **(آدرس‌ها Case sensitive هستند!)**:
-
+To do this, you must have `purchasePackageId` which is part of the `SibchePurchasePackage` class. Then, you must make a link similar to the following and receive the verification data from the server **(addresses are case sensitive!)**:
 `https://api.sibche.com/sdk/userInAppPurchasePackages/{purchasePackageId}/verifyConsume`
 
-همچنین برای این درخواست، بایستی هدر HTTP با اسم `App-Key` تنظیم نمایید. این کلید از طریق پنل توسعه‌دهندگان به صورت اختصاصی برای هر برنامه قابل دریافت است. اسم این کلید، **کلید سرور** نام دارد و عبارت ۳۰ کاراکتری است.
-
+Also, the HTTP header must be set onto the App-Key for this operation. This key is available for any specific program through the developer panel. This key is called the **server key** and has 30 characters.
 
 ```shell
 curl --header "App-Key: YOUR_SERVER_KEY" -X POST \
 'https://api.sibche.com/sdk/userInAppPurchasePackages/1/verifyConsume'
 ```
 
-نمونه کد قابل فراخوانی برای curl به شکل روبرو خواهد بود:
+A sample of code which can be recalled for curl can be as follows:
 
 <br/>
 <br/>
 
-در جواب، سرور پاسخی با یکی از **HTTP Response Code** های زیر خواهد داد:
+In response, the server will provide one of these **HTTP Response Codes**:
 
 - HTTP Status Code 404 (Not Found):
 
-در صورتی که آدرس لینک را اشتباه وارد کرده باشید، یا بسته مورد نظر با purchasePackageId اشتباه وارد شده باشد، یا بسته مورد نظر قبلا مصرف شده باشد این خطا رخ خواهد داد.  
-در این صورت، سرور در متن پاسخ، پاسخی شبیه روبرو خواهد داد:
-
+ this occurs either when you misspell the address link or package, or if the package has already been used. In this case the server will respond with something like this code:
 
 ```json
 {
@@ -365,9 +324,7 @@ curl --header "App-Key: YOUR_SERVER_KEY" -X POST \
 
 - HTTP Status Code 401 (Unauthorized):
 
-یعنی اینکه کلید سروری که بر روی App-Key تنظیم شده است، غیر معتبر و اشتباه است.
-در این صورت، سرور در متن پاسخ، پاسخی شبیه روبرو خواهد داد:
-
+ this means that the server key which has been set on the app-key is invalid or wrong. In this case, the server will provide a similar response to the following:
 
 ```json
 {
@@ -377,16 +334,13 @@ curl --header "App-Key: YOUR_SERVER_KEY" -X POST \
 ```
 
 - HTTP Status Code 202 (Accepted / OK):
+this means that the package has been successfully consumed and the purchase is valid. In this case, the server will return no written message in its response.
 
 
-در این صورت یعنی، بسته مورد نظر با موفقیت مصرف شد و خرید کاربر، معتبر بوده است.
-برای این حالت،‌ سرور در متن پاسخ، هیچ نوشته‌ای بر نخواهد گرداند.
-
-
-## درخواست وارد شدن کاربر داخل پلاگین سیبچه (کرونا)
+##Client login request to the Sibche developer kit (corona)
 
 <aside class="success">
-توصیه می‌کنیم از این بخش به صورت دستی استفاده نکنید چرا که در فرآیند پرداخت، اگر کاربر لاگین نکرده باشد، کتابخانه سیبچه خود اقدام به لاگین کاربر می‌کند.
+Note: I recommend that you don’t use this section manually because if the client has not logged in during the payment process, the Sibche library will automatically attempt to do so.
 </aside>
 
 
@@ -398,19 +352,17 @@ end
 SibcheStoreKit.loginUser(loginCallback)
 ```
 
-با استفاده از این دستور، میتوانید به کتابخانه سیبچه، درخواست لاگین کاربر را بدهید. کافیست همانند کد روبرو، تابع مربوطه کیت توسعه‌دهندگان را فراخوانی نمایید.
-
+By using this code, you can send a login request to the Sibche library. All you need to do is, as it is done below, recall the function relating to the developer kit.
 <br/>
 <br/>
 <br/>
 
-در جواب، پلاگین سیبچه، موفق بودن ورود (لاگین) و خطایی که با آن برخورد کرده را برمی‌گرداند. همچنین، در صورت موفقیت و در صورت موجود بودن، نام کاربر و آیدی کاربر را برمی‌گرداند.
+In response, the plugin will provide information regarding the successfulness of the login and the errors it faced in the process. Also, it will recall the client’s ID and username if the process was successful and the items exist in the database.
 
-
-## درخواست خارج شدن کاربر از پلاگین سیبچه (کرونا)
+## How to logout of the Sibche developer kit (corona)
 
 <aside class="warning">
-توصیه می‌کنیم، تا زمانی که دلیل مشخصی جهت استفاده از آن را ندارید، از این تابع استفاده ننمایید. چرا که دکمه خروج داخل پلاگین سیبچه پیاده‌سازی شده است.
+Note: I highly recommend that you do not use this function if you do not have a specific reason, because the logout button has been implemented in the sibche plugin.
 </aside>
 
 ```lua
@@ -421,11 +373,9 @@ end
 SibcheStoreKit.logoutUser(logoutCallback)
 ```
 
-با استفاده از این دستور می‌توانید کاربر فعلی لاگین کرده داخل سیستم را از پلاگین خارج نمایید و کلیه اطلاعات session او را پاک نمایید.
-این تابع پس از اتمام کار، در قالب callback به شما جواب خواهد داد.
+By the use of this code, you can logout the client who is already logged in to the plugin and delete their session information. This function will provide a response to you in the form of a callback.
 
-
-## گرفتن اطلاعات کاربر فعلی (کرونا)
+##How to obtain information on current clients (corona)
 
 ```lua
 local function getCurrentUserCallback(event)
@@ -435,20 +385,17 @@ end
 SibcheStoreKit.getCurrentUserData(getCurrentUserCallback)
 ```
 
-زمانی که نیاز دارید تا شماره تلفن و نیز شماره کاربری (userId) کاربر را دریافت نمایید، می‌توانید از تابع روبرو استفاده نمایید.
+
+When you need to get the client’s phone number and userID you can use the following function:
 
 <br/>
 <br/>
 <br/>
 
-در جواب، کیت توسعه‌دهندگان، نتیجه موفق بودن عملیات و نیز ارور رخ داده را برمی‌گرداند. در حالت عادی، بایستی عملیات موفق باشد ولی ناموفق بودن عملیات می‌تواند به دلایل شبکه‌ای مختلفی همانند موارد زیر باشد:
+In response, the developer kit will tell you if the process was successful or not and also recalls the error that may have occurred. In most cases the process will go smoothly, but in some rare cases, the following reasons could be why the process wasn’t successful:
+-	Connectivity issues
+-	Network issues
+-	Sibche server is not accessible
 
 
-- دسترسی به اینترنت مقدور نبود
-- هر اتفاق ناخواسته شبکه‌ای رخ داده است
-- سرور سیبچه در دسترس نیست
-
-
-همچنین در جواب، پارامتر سومی هم دارد که وضعیت کاربر را از لحاظ لاگین بودن/نبودن به اطلاع شما می‌رساند. در صورتی که لاگین باشد، از نوع `‍loginStatusTypeIsLoggedIn‍‍` جواب خواهد داد. در صورت لاگین نبودن نیز جواب داده شده از نوع `loginStatusTypeIsLoggedOut` می‌باشد. در صورتی که عملیات ناموفق باشد و از وضعیت لاگین بودن کاربر مطمئن نباشیم نیز جواب ‍`loginStatusTypeHaveTokenButFailedToCheck` را خواهیم داد.
-پارامتر‌های بعدی نیز شامل شماره تلفن کاربر و نیز id کاربر می‌باشد که در پاسخ به شما داده خواهد شد.
-
+In addition, a third parameter exists which tells you whether the client is logged in or not. if the client is logged in, the response type will be of this kind `loginStatusTypeIsLoggedIn`. If they are not logged in, the response type will be of the `loginStatusTypeIsLoggedOut` kind. If the process is not successful and we are not sure whether the client is logged in or not, we will get a response which is of the `loginStatusTypeHaveTokenButFailedToCheck` kind. The next parameters in the received response will include the client’s phone number and ID.
